@@ -2,7 +2,7 @@
     "name": "esx-legacy-snippets-zh-cn",
     "displayName": "ESX Legacy 代码片段 · 简体中文增强版",
     "description": "ESX Legacy 框架的 Lua 代码片段（简体中文增强版），与最新 esx_core 源码保持同步。",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "license": "MIT",
     "publisher": "DyroS3",
     "homepage": "https://github.com/DyroS3/esx-legacy-snippets",
