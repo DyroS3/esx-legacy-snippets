@@ -3,6 +3,7 @@
     "displayName": "Official ESX Snippets",
     "description": "Official Snippet Extension for ESX Legacy",
     "version": "2.0.1",
+    "license": "MIT",
     "publisher": "esx-framework",
     "homepage": "https://github.com/esx-framework/esx-legacy-snippets",
     "icon": "assets/images/logo.png",
@@ -12,7 +13,7 @@
     "categories": [
         "Snippets"
     ],
-    "gallaryBanner": {
+    "galleryBanner": {
         "color": "#0F68F7",
         "theme": "dark"
     },
@@ -41,5 +42,17 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/esx-framework/esx-legacy-snippets.git"
+    },
+    "bugs": {
+        "url": "https://github.com/esx-framework/esx-legacy-snippets/issues"
+    },
+    "scripts": {
+        "package": "vsce package",
+        "publish": "vsce publish",
+        "publish:ovsx": "ovsx publish"
+    },
+    "devDependencies": {
+        "@vscode/vsce": "^3.9.2",
+        "ovsx": "^1.0.0"
     }
 }

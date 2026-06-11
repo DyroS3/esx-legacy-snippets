@@ -1,0 +1,27 @@
+# Source control / project meta
+.git/**
+.github/**
+.gitignore
+.vscodeignore
+
+# Editor config (not needed inside the published extension)
+.vscode/**
+
+# Dev dependencies & lockfiles
+node_modules/**
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Build artifacts
+*.vsix
+dist/**
+out/**
+
+# Redundant source asset (we ship logo.png, referenced by package.json)
+assets/images/logo.jpg
+
+# OS junk
+**/.DS_Store
+**/Thumbs.db
+**/desktop.ini
