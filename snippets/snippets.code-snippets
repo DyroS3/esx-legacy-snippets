@@ -105,7 +105,7 @@
     "DeleteObj": {
         "prefix": "ESX.Game.DeleteObject",
         "body": [
-            "ESX.Game.DeleteObject(obj"
+            "ESX.Game.DeleteObject(obj)"
         ]
     },
     "DeleteVehicle": {
@@ -147,7 +147,7 @@
     "GetObjects": {
         "prefix": "ESX.Game.GetObjects",
         "body": [
-            "ESX.Game.GetObjects"
+            "ESX.Game.GetObjects()"
         ]
     },
     "GetPedMugShot": {
@@ -289,9 +289,9 @@
         ]
     },
     "RequestAnimSet": {
-        "prefix": "ESX.Steaming.RequestAnimSet",
+        "prefix": "ESX.Streaming.RequestAnimSet",
         "body": [
-            "ESX.Steaming.RequestAnimSet(set, cb)"
+            "ESX.Streaming.RequestAnimSet(set, cb)"
         ]
     },
     "RequestModel": {
@@ -303,7 +303,7 @@
     "RequestNamedPtfxAsset": {
         "prefix": "ESX.Streaming.RequestNamedPtfxAsset",
         "body": [
-            "ESX.Streaming.RequestNamedPtfx(asset, cb)"
+            "ESX.Streaming.RequestNamedPtfxAsset(asset, cb)"
         ]
     },
     "RequestStreamedTextureDict": {
@@ -381,7 +381,7 @@
     "RegisterType": {
         "prefix": "ESX.UI.Menu.RegisterType",
         "body": [
-            "ESX.UI.RegisterType(type, open, close)"
+            "ESX.UI.Menu.RegisterType(type, open, close)"
         ]
     },
     "onPlayerDeath": {
@@ -431,7 +431,7 @@
     "GetWeaponList": {
         "prefix": "ESX.GetWeaponList",
         "body": [
-            "ESX.GetWeaponList"
+            "ESX.GetWeaponList()"
         ]
     },
     "Math.GroupDigits": {
