@@ -1,11 +1,11 @@
 {
-    "name": "esx-legacy",
-    "displayName": "Official ESX Snippets",
-    "description": "Official Snippet Extension for ESX Legacy",
-    "version": "2.0.1",
+    "name": "esx-legacy-snippets-zh-cn",
+    "displayName": "ESX Legacy 代码片段 · 简体中文增强版",
+    "description": "ESX Legacy 框架的 Lua 代码片段（简体中文增强版），与最新 esx_core 源码保持同步。",
+    "version": "3.0.0",
     "license": "MIT",
-    "publisher": "esx-framework",
-    "homepage": "https://github.com/esx-framework/esx-legacy-snippets",
+    "publisher": "DyroS3",
+    "homepage": "https://github.com/DyroS3/esx-legacy-snippets",
     "icon": "assets/images/logo.png",
     "engines": {
         "vscode": "^1.68.0"
@@ -27,24 +27,24 @@
     },
     "keywords": [
         "ESX",
+        "esx",
+        "FiveM",
         "fivem",
         "lua",
-        "FiveM",
-        "official",
-        "esx",
         "snippets",
-        "ESX Snippets",
-        "esx Snippets",
-        "Esx Snippets",
-        "ESX-snippets",
-        "esx-snippets"
+        "代码片段",
+        "片段",
+        "简体中文",
+        "中文",
+        "ESX Legacy",
+        "es_extended"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/esx-framework/esx-legacy-snippets.git"
+        "url": "https://github.com/DyroS3/esx-legacy-snippets.git"
     },
     "bugs": {
-        "url": "https://github.com/esx-framework/esx-legacy-snippets/issues"
+        "url": "https://github.com/DyroS3/esx-legacy-snippets/issues"
     },
     "scripts": {
         "package": "vsce package",

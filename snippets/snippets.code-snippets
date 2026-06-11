@@ -4,7 +4,7 @@
         "body": [
             "ESX = exports['es_extended']:getSharedObject()"
         ],
-        "description": "Get the shared ESX object."
+        "description": "获取共享的 ESX 对象。"
     },
     "Event playerLoaded": {
         "prefix": "ESX:playerLoaded",
@@ -13,7 +13,7 @@
             "\t$0",
             "end)"
         ],
-        "description": "Client event triggered when the player is fully loaded."
+        "description": "[客户端] 玩家完全加载完成时触发的事件。"
     },
     "Event onPlayerDeath": {
         "prefix": "ESX:onPlayerDeath",
@@ -22,7 +22,7 @@
             "\t$0",
             "end)"
         ],
-        "description": "Client event triggered when the player dies."
+        "description": "[客户端] 玩家死亡时触发的事件。"
     },
     "Event onPlayerLogout": {
         "prefix": "ESX:onPlayerLogout",
@@ -31,7 +31,7 @@
             "\t$0",
             "end)"
         ],
-        "description": "Client event triggered when the player logs out."
+        "description": "[客户端] 玩家登出时触发的事件。"
     },
     "Event setJob": {
         "prefix": "ESX:setJob",
@@ -40,7 +40,7 @@
             "\t$0",
             "end)"
         ],
-        "description": "Triggered when a player's job changes."
+        "description": "[客户端] 玩家工作变更时触发。"
     },
     "Event playerLoadedServer": {
         "prefix": "esx:playerLoaded server",
@@ -49,7 +49,7 @@
             "\t$0",
             "end)"
         ],
-        "description": "Server event triggered when a player is loaded."
+        "description": "[服务端] 玩家加载完成时触发的事件。"
     },
     "Event playerDropped": {
         "prefix": "esx:playerDropped",
@@ -58,42 +58,42 @@
             "\t$0",
             "end)"
         ],
-        "description": "Server event triggered when a player drops."
+        "description": "[服务端] 玩家掉线时触发的事件。"
     },
     "ESX.GetPlayerData": {
         "prefix": "ESX.GetPlayerData",
         "body": [
             "ESX.GetPlayerData()"
         ],
-        "description": "[Client] Returns the current player's data table."
+        "description": "[客户端] 返回当前玩家的数据表。"
     },
     "ESX.IsPlayerLoaded client": {
         "prefix": "ESX.IsPlayerLoaded",
         "body": [
             "ESX.IsPlayerLoaded()"
         ],
-        "description": "[Client] Returns whether the player has fully loaded."
+        "description": "[客户端] 返回玩家是否已完全加载。"
     },
     "ESX.SetPlayerData": {
         "prefix": "ESX.SetPlayerData",
         "body": [
             "ESX.SetPlayerData(${1:key}, ${2:val})"
         ],
-        "description": "[Client] Sets a key on the local player data."
+        "description": "[客户端] 设置本地玩家数据中的某个键。"
     },
     "ESX.GetAccount client": {
         "prefix": "ESX.GetAccount",
         "body": [
             "ESX.GetAccount(${1:account})"
         ],
-        "description": "[Client] Returns one of the local player's accounts."
+        "description": "[客户端] 返回本地玩家的某个账户。"
     },
     "ESX.SearchInventory": {
         "prefix": "ESX.SearchInventory",
         "body": [
             "ESX.SearchInventory(${1:items}, ${2:count})"
         ],
-        "description": "[Client] Search the player's inventory for one or more items."
+        "description": "[客户端] 在玩家库存中查找一个或多个物品。"
     },
     "ESX.SpawnPlayer": {
         "prefix": "ESX.SpawnPlayer",
@@ -102,14 +102,14 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Client] Spawn the player with a skin at the given coords."
+        "description": "[客户端] 以指定皮肤在指定坐标生成玩家。"
     },
     "ESX.DisableSpawnManager": {
         "prefix": "ESX.DisableSpawnManager",
         "body": [
             "ESX.DisableSpawnManager()"
         ],
-        "description": "[Client] Disable the default spawnmanager handling."
+        "description": "[客户端] 禁用默认的 spawnmanager 处理。"
     },
     "ESX.SecureNetEvent": {
         "prefix": "ESX.SecureNetEvent",
@@ -118,56 +118,56 @@
             "\t$0",
             "end)"
         ],
-        "description": "Register a net event with built-in source validation."
+        "description": "注册带来源校验的网络事件。"
     },
     "ESX.ShowNotification": {
         "prefix": "ESX.ShowNotification",
         "body": [
             "ESX.ShowNotification(${1:message}, ${2:notifyType}, ${3:length}, ${4:title}, ${5:position})"
         ],
-        "description": "[Client] Show a notification (esx_notify)."
+        "description": "[客户端] 显示一条通知（esx_notify）。"
     },
     "ESX.ShowAdvancedNotification": {
         "prefix": "ESX.ShowAdvancedNotification",
         "body": [
             "ESX.ShowAdvancedNotification(${1:sender}, ${2:subject}, ${3:msg}, ${4:textureDict}, ${5:iconType}, ${6:flash}, ${7:saveToBrief}, ${8:hudColorIndex})"
         ],
-        "description": "[Client] Show an advanced (GTA feed) notification."
+        "description": "[客户端] 显示高级（GTA 消息源）通知。"
     },
     "ESX.ShowHelpNotification": {
         "prefix": "ESX.ShowHelpNotification",
         "body": [
             "ESX.ShowHelpNotification(${1:msg}, ${2:thisFrame}, ${3:beep}, ${4:duration})"
         ],
-        "description": "[Client] Show a help notification in the top-left corner."
+        "description": "[客户端] 在左上角显示帮助提示。"
     },
     "ESX.ShowFloatingHelpNotification": {
         "prefix": "ESX.ShowFloatingHelpNotification",
         "body": [
             "ESX.ShowFloatingHelpNotification(${1:msg}, ${2:coords})"
         ],
-        "description": "[Client] Show a help notification floating at world coords."
+        "description": "[客户端] 在世界坐标处显示浮动帮助提示。"
     },
     "ESX.DrawMissionText": {
         "prefix": "ESX.DrawMissionText",
         "body": [
             "ESX.DrawMissionText(${1:msg}, ${2:time})"
         ],
-        "description": "[Client] Draw subtitle/mission text for a duration."
+        "description": "[客户端] 显示字幕/任务文本一段时间。"
     },
     "ESX.TextUI": {
         "prefix": "ESX.TextUI",
         "body": [
             "ESX.TextUI('${1:message}', '${2:info}')"
         ],
-        "description": "[Client] Show a persistent TextUI (esx_textui)."
+        "description": "[客户端] 显示常驻 TextUI（esx_textui）。"
     },
     "ESX.HideUI": {
         "prefix": "ESX.HideUI",
         "body": [
             "ESX.HideUI()"
         ],
-        "description": "[Client] Hide the active TextUI."
+        "description": "[客户端] 隐藏当前 TextUI。"
     },
     "ESX.Progressbar": {
         "prefix": "ESX.Progressbar",
@@ -183,35 +183,35 @@
             "\tonCancel = function() end",
             "})"
         ],
-        "description": "[Client] Show a progress bar (esx_progressbar)."
+        "description": "[客户端] 显示进度条（esx_progressbar）。"
     },
     "ESX.CancelProgressbar": {
         "prefix": "ESX.CancelProgressbar",
         "body": [
             "ESX.CancelProgressbar()"
         ],
-        "description": "[Client] Cancel the active progress bar."
+        "description": "[客户端] 取消当前进度条。"
     },
     "ESX.HashString": {
         "prefix": "ESX.HashString",
         "body": [
             "ESX.HashString('${1:str}')"
         ],
-        "description": "[Client] Hash a string into a control input hash."
+        "description": "[客户端] 将字符串哈希为控制输入哈希。"
     },
     "ESX.ShowInventory": {
         "prefix": "ESX.ShowInventory",
         "body": [
             "ESX.ShowInventory()"
         ],
-        "description": "[Client] Open the default inventory UI."
+        "description": "[客户端] 打开默认库存界面。"
     },
     "ESX.UI.ShowInventoryItemNotification": {
         "prefix": "ESX.UI.ShowInventoryItemNotification",
         "body": [
             "ESX.UI.ShowInventoryItemNotification(${1:add}, ${2:item}, ${3:count})"
         ],
-        "description": "[Client] Show an item added/removed notification."
+        "description": "[客户端] 显示物品增加/移除通知。"
     },
     "ESX.OpenContext": {
         "prefix": "ESX.OpenContext",
@@ -222,28 +222,28 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Client] Open a context menu (esx_context)."
+        "description": "[客户端] 打开上下文菜单（esx_context）。"
     },
     "ESX.PreviewContext": {
         "prefix": "ESX.PreviewContext",
         "body": [
             "ESX.PreviewContext(${1:data})"
         ],
-        "description": "[Client] Preview a context menu without opening it."
+        "description": "[客户端] 预览上下文菜单但不打开。"
     },
     "ESX.CloseContext": {
         "prefix": "ESX.CloseContext",
         "body": [
             "ESX.CloseContext()"
         ],
-        "description": "[Client] Close the active context menu."
+        "description": "[客户端] 关闭当前上下文菜单。"
     },
     "ESX.RefreshContext": {
         "prefix": "ESX.RefreshContext",
         "body": [
             "ESX.RefreshContext(${1:data})"
         ],
-        "description": "[Client] Refresh the active context menu."
+        "description": "[客户端] 刷新当前上下文菜单。"
     },
     "ESX.RegisterInput": {
         "prefix": "ESX.RegisterInput",
@@ -252,7 +252,7 @@
             "\t$0",
             "end${5:, on_release})"
         ],
-        "description": "[Client] Register a key mapping / input command."
+        "description": "[客户端] 注册按键映射/输入命令。"
     },
     "ESX.UI.Menu.Open": {
         "prefix": "ESX.UI.Menu.Open",
@@ -267,35 +267,35 @@
             "\tmenu.close()",
             "end)"
         ],
-        "description": "[Client] Open an ESX menu (esx_menu_default)."
+        "description": "[客户端] 打开一个 ESX 菜单（esx_menu_default）。"
     },
     "ESX.UI.Menu.Close": {
         "prefix": "ESX.UI.Menu.Close",
         "body": [
             "ESX.UI.Menu.Close(${1:menuType}, ${2:namespace}, ${3:name}${4:, cancel})"
         ],
-        "description": "[Client] Close a specific opened menu."
+        "description": "[客户端] 关闭指定的已打开菜单。"
     },
     "ESX.UI.Menu.CloseAll": {
         "prefix": "ESX.UI.Menu.CloseAll",
         "body": [
             "ESX.UI.Menu.CloseAll(${1:cancel})"
         ],
-        "description": "[Client] Close all opened menus."
+        "description": "[客户端] 关闭所有已打开的菜单。"
     },
     "ESX.UI.Menu.GetOpened": {
         "prefix": "ESX.UI.Menu.GetOpened",
         "body": [
             "ESX.UI.Menu.GetOpened(${1:menuType}, ${2:namespace}, ${3:name})"
         ],
-        "description": "[Client] Get a specific opened menu table."
+        "description": "[客户端] 获取指定的已打开菜单表。"
     },
     "ESX.UI.Menu.GetOpenedMenus": {
         "prefix": "ESX.UI.Menu.GetOpenedMenus",
         "body": [
             "ESX.UI.Menu.GetOpenedMenus()"
         ],
-        "description": "[Client] Get all currently opened menus."
+        "description": "[客户端] 获取所有当前打开的菜单。"
     },
     "ESX.UI.Menu.RegisterType": {
         "prefix": "ESX.UI.Menu.RegisterType",
@@ -307,7 +307,7 @@
             "\t-- close",
             "end)"
         ],
-        "description": "[Client] Register a custom menu type."
+        "description": "[客户端] 注册自定义菜单类型。"
     },
     "ESX.RegisterInteraction": {
         "prefix": "ESX.RegisterInteraction",
@@ -318,35 +318,35 @@
             "\treturn ${2:true} -- condition",
             "end)"
         ],
-        "description": "[Client] Register an interaction (key + condition)."
+        "description": "[客户端] 注册交互（按键 + 条件）。"
     },
     "ESX.RemoveInteraction": {
         "prefix": "ESX.RemoveInteraction",
         "body": [
             "ESX.RemoveInteraction('${1:name}')"
         ],
-        "description": "[Client] Remove a registered interaction."
+        "description": "[客户端] 移除已注册的交互。"
     },
     "ESX.GetInteractKey": {
         "prefix": "ESX.GetInteractKey",
         "body": [
             "ESX.GetInteractKey()"
         ],
-        "description": "[Client] Get the configured interaction key."
+        "description": "[客户端] 获取配置的交互按键。"
     },
     "ESX.Game.GetPedMugshot": {
         "prefix": "ESX.Game.GetPedMugshot",
         "body": [
             "local mugshot, mugshotStr = ESX.Game.GetPedMugshot(${1:ped}, ${2:transparent})"
         ],
-        "description": "[Client] Get a mugshot texture for a ped."
+        "description": "[客户端] 获取某个 ped 的头像贴图。"
     },
     "ESX.Game.Teleport": {
         "prefix": "ESX.Game.Teleport",
         "body": [
             "ESX.Game.Teleport(${1:entity}, ${2:coords}${3:, cb})"
         ],
-        "description": "[Client] Teleport an entity to coords."
+        "description": "[客户端] 将实体传送到坐标。"
     },
     "ESX.Game.SpawnObject": {
         "prefix": "ESX.Game.SpawnObject",
@@ -355,7 +355,7 @@
             "\t$0",
             "end${3:, networked})"
         ],
-        "description": "[Client] Spawn a (networked) object."
+        "description": "[客户端] 生成一个（联网）物体。"
     },
     "ESX.Game.SpawnLocalObject": {
         "prefix": "ESX.Game.SpawnLocalObject",
@@ -364,21 +364,21 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Client] Spawn a client-only object."
+        "description": "[客户端] 生成一个仅本地的物体。"
     },
     "ESX.Game.DeleteVehicle": {
         "prefix": "ESX.Game.DeleteVehicle",
         "body": [
             "ESX.Game.DeleteVehicle(${1:vehicle})"
         ],
-        "description": "[Client] Delete a vehicle entity."
+        "description": "[客户端] 删除一个载具实体。"
     },
     "ESX.Game.DeleteObject": {
         "prefix": "ESX.Game.DeleteObject",
         "body": [
             "ESX.Game.DeleteObject(${1:object})"
         ],
-        "description": "[Client] Delete an object entity."
+        "description": "[客户端] 删除一个物体实体。"
     },
     "ESX.Game.SpawnVehicle": {
         "prefix": "ESX.Game.SpawnVehicle",
@@ -387,7 +387,7 @@
             "\t$0",
             "end${4:, networked})"
         ],
-        "description": "[Client] Spawn a (networked) vehicle."
+        "description": "[客户端] 生成一个（联网）载具。"
     },
     "ESX.Game.SpawnLocalVehicle": {
         "prefix": "ESX.Game.SpawnLocalVehicle",
@@ -396,231 +396,231 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Client] Spawn a client-only vehicle."
+        "description": "[客户端] 生成一个仅本地的载具。"
     },
     "ESX.Game.IsVehicleEmpty": {
         "prefix": "ESX.Game.IsVehicleEmpty",
         "body": [
             "ESX.Game.IsVehicleEmpty(${1:vehicle})"
         ],
-        "description": "[Client] Returns whether a vehicle has no occupants."
+        "description": "[客户端] 返回载具是否没有乘员。"
     },
     "ESX.Game.GetObjects": {
         "prefix": "ESX.Game.GetObjects",
         "body": [
             "ESX.Game.GetObjects()"
         ],
-        "description": "[Client] Get all object entities."
+        "description": "[客户端] 获取所有物体实体。"
     },
     "ESX.Game.GetPeds": {
         "prefix": "ESX.Game.GetPeds",
         "body": [
             "ESX.Game.GetPeds(${1:onlyOtherPeds})"
         ],
-        "description": "[Client] Get all peds (optionally excluding the player)."
+        "description": "[客户端] 获取所有 ped（可排除玩家自身）。"
     },
     "ESX.Game.GetVehicles": {
         "prefix": "ESX.Game.GetVehicles",
         "body": [
             "ESX.Game.GetVehicles()"
         ],
-        "description": "[Client] Get all vehicle entities."
+        "description": "[客户端] 获取所有载具实体。"
     },
     "ESX.Game.GetPlayers": {
         "prefix": "ESX.Game.GetPlayers",
         "body": [
             "ESX.Game.GetPlayers(${1:onlyOtherPlayers}, ${2:returnKeyValue}, ${3:returnPeds})"
         ],
-        "description": "[Client] Get players and optionally their peds."
+        "description": "[客户端] 获取玩家，可选返回其 ped。"
     },
     "ESX.Game.GetClosestObject": {
         "prefix": "ESX.Game.GetClosestObject",
         "body": [
             "ESX.Game.GetClosestObject(${1:coords}${2:, modelFilter})"
         ],
-        "description": "[Client] Get the closest object to coords."
+        "description": "[客户端] 获取离坐标最近的物体。"
     },
     "ESX.Game.GetClosestPed": {
         "prefix": "ESX.Game.GetClosestPed",
         "body": [
             "ESX.Game.GetClosestPed(${1:coords}${2:, modelFilter})"
         ],
-        "description": "[Client] Get the closest ped to coords."
+        "description": "[客户端] 获取离坐标最近的 ped。"
     },
     "ESX.Game.GetClosestPlayer": {
         "prefix": "ESX.Game.GetClosestPlayer",
         "body": [
             "local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer(${1:coords})"
         ],
-        "description": "[Client] Get the closest player to coords."
+        "description": "[客户端] 获取离坐标最近的玩家。"
     },
     "ESX.Game.GetClosestVehicle": {
         "prefix": "ESX.Game.GetClosestVehicle",
         "body": [
             "ESX.Game.GetClosestVehicle(${1:coords}${2:, modelFilter})"
         ],
-        "description": "[Client] Get the closest vehicle to coords."
+        "description": "[客户端] 获取离坐标最近的载具。"
     },
     "ESX.Game.GetClosestEntity": {
         "prefix": "ESX.Game.GetClosestEntity",
         "body": [
             "local entity, distance = ESX.Game.GetClosestEntity(${1:entities}, ${2:isPlayerEntities}, ${3:coords}, ${4:modelFilter})"
         ],
-        "description": "[Client] Get the closest entity from a list."
+        "description": "[客户端] 从列表中获取最近的实体。"
     },
     "ESX.Game.GetPlayersInArea": {
         "prefix": "ESX.Game.GetPlayersInArea",
         "body": [
             "ESX.Game.GetPlayersInArea(${1:coords}, ${2:maxDistance})"
         ],
-        "description": "[Client] Get players within range of coords."
+        "description": "[客户端] 获取坐标范围内的玩家。"
     },
     "ESX.Game.GetVehiclesInArea": {
         "prefix": "ESX.Game.GetVehiclesInArea",
         "body": [
             "ESX.Game.GetVehiclesInArea(${1:coords}, ${2:maxDistance})"
         ],
-        "description": "[Client] Get vehicles within range of coords."
+        "description": "[客户端] 获取坐标范围内的载具。"
     },
     "ESX.Game.IsSpawnPointClear": {
         "prefix": "ESX.Game.IsSpawnPointClear",
         "body": [
             "ESX.Game.IsSpawnPointClear(${1:coords}, ${2:maxDistance})"
         ],
-        "description": "[Client] Returns whether a spawn point is clear of vehicles."
+        "description": "[客户端] 返回生成点是否没有载具阻挡。"
     },
     "ESX.Game.GetVehicleInDirection": {
         "prefix": "ESX.Game.GetVehicleInDirection",
         "body": [
             "ESX.Game.GetVehicleInDirection()"
         ],
-        "description": "[Client] Get the vehicle in front of the player (raycast)."
+        "description": "[客户端] 获取玩家前方的载具（射线检测）。"
     },
     "ESX.Game.GetVehicleProperties": {
         "prefix": "ESX.Game.GetVehicleProperties",
         "body": [
             "ESX.Game.GetVehicleProperties(${1:vehicle})"
         ],
-        "description": "[Client] Get a vehicle's properties table."
+        "description": "[客户端] 获取载具的属性表。"
     },
     "ESX.Game.SetVehicleProperties": {
         "prefix": "ESX.Game.SetVehicleProperties",
         "body": [
             "ESX.Game.SetVehicleProperties(${1:vehicle}, ${2:props})"
         ],
-        "description": "[Client] Apply a properties table to a vehicle."
+        "description": "[客户端] 将属性表应用到载具。"
     },
     "ESX.Game.GetShapeTestResultSync": {
         "prefix": "ESX.Game.GetShapeTestResultSync",
         "body": [
             "ESX.Game.GetShapeTestResultSync(${1:shape})"
         ],
-        "description": "[Client] Synchronously get a shape test result."
+        "description": "[客户端] 同步获取形状检测结果。"
     },
     "ESX.Game.RaycastScreen": {
         "prefix": "ESX.Game.RaycastScreen",
         "body": [
             "ESX.Game.RaycastScreen(${1:depth})"
         ],
-        "description": "[Client] Raycast from the screen/camera."
+        "description": "[客户端] 从屏幕/摄像机发射射线检测。"
     },
     "ESX.Game.Utils.DrawText3D": {
         "prefix": "ESX.Game.Utils.DrawText3D",
         "body": [
             "ESX.Game.Utils.DrawText3D(${1:coords}, '${2:text}'${3:, size, font})"
         ],
-        "description": "[Client] Draw 3D text at world coords."
+        "description": "[客户端] 在世界坐标处绘制 3D 文本。"
     },
     "ESX.GetVehicleTypeClient": {
         "prefix": "ESX.GetVehicleTypeClient",
         "body": [
             "ESX.GetVehicleTypeClient(${1:model})"
         ],
-        "description": "[Client] Get the vehicle type for a model."
+        "description": "[客户端] 获取某个模型的载具类型。"
     },
     "ESX.Scaleform.ShowFreemodeMessage": {
         "prefix": "ESX.Scaleform.ShowFreemodeMessage",
         "body": [
             "ESX.Scaleform.ShowFreemodeMessage('${1:title}', '${2:msg}', ${3:sec})"
         ],
-        "description": "[Client] Show a big freemode message."
+        "description": "[客户端] 显示一条大号自由模式消息。"
     },
     "ESX.Scaleform.ShowBreakingNews": {
         "prefix": "ESX.Scaleform.ShowBreakingNews",
         "body": [
             "ESX.Scaleform.ShowBreakingNews('${1:title}', '${2:msg}', '${3:bottom}', ${4:sec})"
         ],
-        "description": "[Client] Show a breaking-news scaleform."
+        "description": "[客户端] 显示突发新闻 scaleform。"
     },
     "ESX.Scaleform.ShowPopupWarning": {
         "prefix": "ESX.Scaleform.ShowPopupWarning",
         "body": [
             "ESX.Scaleform.ShowPopupWarning('${1:title}', '${2:msg}', '${3:bottom}', ${4:sec})"
         ],
-        "description": "[Client] Show a popup warning scaleform."
+        "description": "[客户端] 显示弹窗警告 scaleform。"
     },
     "ESX.Scaleform.ShowTrafficMovie": {
         "prefix": "ESX.Scaleform.ShowTrafficMovie",
         "body": [
             "ESX.Scaleform.ShowTrafficMovie(${1:sec})"
         ],
-        "description": "[Client] Show the traffic movie scaleform."
+        "description": "[客户端] 显示交通影片 scaleform。"
     },
     "ESX.Scaleform.Utils.RequestScaleformMovie": {
         "prefix": "ESX.Scaleform.Utils.RequestScaleformMovie",
         "body": [
             "ESX.Scaleform.Utils.RequestScaleformMovie('${1:movie}')"
         ],
-        "description": "[Client] Request and load a scaleform movie."
+        "description": "[客户端] 请求并加载 scaleform 影片。"
     },
     "ESX.Scaleform.Utils.RunMethod": {
         "prefix": "ESX.Scaleform.Utils.RunMethod",
         "body": [
             "ESX.Scaleform.Utils.RunMethod(${1:scaleform}, '${2:methodName}', ${3:returnValue})"
         ],
-        "description": "[Client] Run a method on a scaleform movie."
+        "description": "[客户端] 在 scaleform 影片上调用方法。"
     },
     "ESX.Streaming.RequestModel": {
         "prefix": "ESX.Streaming.RequestModel",
         "body": [
             "ESX.Streaming.RequestModel(${1:modelHash}${2:, cb})"
         ],
-        "description": "[Client] Request and load a model."
+        "description": "[客户端] 请求并加载模型。"
     },
     "ESX.Streaming.RequestStreamedTextureDict": {
         "prefix": "ESX.Streaming.RequestStreamedTextureDict",
         "body": [
             "ESX.Streaming.RequestStreamedTextureDict('${1:textureDict}'${2:, cb})"
         ],
-        "description": "[Client] Request and load a streamed texture dictionary."
+        "description": "[客户端] 请求并加载流式贴图字典。"
     },
     "ESX.Streaming.RequestNamedPtfxAsset": {
         "prefix": "ESX.Streaming.RequestNamedPtfxAsset",
         "body": [
             "ESX.Streaming.RequestNamedPtfxAsset('${1:assetName}'${2:, cb})"
         ],
-        "description": "[Client] Request and load a named particle FX asset."
+        "description": "[客户端] 请求并加载命名粒子特效资源。"
     },
     "ESX.Streaming.RequestAnimSet": {
         "prefix": "ESX.Streaming.RequestAnimSet",
         "body": [
             "ESX.Streaming.RequestAnimSet('${1:animSet}'${2:, cb})"
         ],
-        "description": "[Client] Request and load an animation set."
+        "description": "[客户端] 请求并加载动画集。"
     },
     "ESX.Streaming.RequestAnimDict": {
         "prefix": "ESX.Streaming.RequestAnimDict",
         "body": [
             "ESX.Streaming.RequestAnimDict('${1:animDict}'${2:, cb})"
         ],
-        "description": "[Client] Request and load an animation dictionary."
+        "description": "[客户端] 请求并加载动画字典。"
     },
     "ESX.Streaming.RequestWeaponAsset": {
         "prefix": "ESX.Streaming.RequestWeaponAsset",
         "body": [
             "ESX.Streaming.RequestWeaponAsset(${1:weaponHash}${2:, cb})"
         ],
-        "description": "[Client] Request and load a weapon asset."
+        "description": "[客户端] 请求并加载武器资源。"
     },
     "ESX.TriggerServerCallback": {
         "prefix": "ESX.TriggerServerCallback",
@@ -629,14 +629,14 @@
             "\t$0",
             "end${3:, ...})"
         ],
-        "description": "[Client] Trigger a server callback."
+        "description": "[客户端] 触发服务端回调。"
     },
     "ESX.AwaitServerCallback": {
         "prefix": "ESX.AwaitServerCallback",
         "body": [
             "local ${1:result} = ESX.AwaitServerCallback('${2:eventName}'${3:, ...})"
         ],
-        "description": "[Client] Await a server callback synchronously."
+        "description": "[客户端] 同步等待服务端回调。"
     },
     "ESX.RegisterClientCallback": {
         "prefix": "ESX.RegisterClientCallback",
@@ -645,7 +645,7 @@
             "\tcb($0)",
             "end)"
         ],
-        "description": "[Client] Register a client callback."
+        "description": "[客户端] 注册客户端回调。"
     },
     "ESX.RegisterServerCallback": {
         "prefix": "ESX.RegisterServerCallback",
@@ -654,7 +654,7 @@
             "\tcb($0)",
             "end)"
         ],
-        "description": "[Server] Register a server callback."
+        "description": "[服务端] 注册服务端回调。"
     },
     "ESX.TriggerClientCallback": {
         "prefix": "ESX.TriggerClientCallback",
@@ -663,63 +663,63 @@
             "\t$0",
             "end${4:, ...})"
         ],
-        "description": "[Server] Trigger a client callback."
+        "description": "[服务端] 触发客户端回调。"
     },
     "ESX.AwaitClientCallback": {
         "prefix": "ESX.AwaitClientCallback",
         "body": [
             "local ${1:result} = ESX.AwaitClientCallback(${2:player}, '${3:eventName}'${4:, ...})"
         ],
-        "description": "[Server] Await a client callback synchronously."
+        "description": "[服务端] 同步等待客户端回调。"
     },
     "ESX.GetPlayerFromId": {
         "prefix": "ESX.GetPlayerFromId",
         "body": [
             "local xPlayer = ESX.GetPlayerFromId(${1:source})"
         ],
-        "description": "[Server] Get the xPlayer object from a server id."
+        "description": "[服务端] 根据服务器 id 获取 xPlayer 对象。"
     },
     "ESX.GetPlayerFromIdentifier": {
         "prefix": "ESX.GetPlayerFromIdentifier",
         "body": [
             "local xPlayer = ESX.GetPlayerFromIdentifier('${1:identifier}')"
         ],
-        "description": "[Server] Get the xPlayer object from an identifier."
+        "description": "[服务端] 根据 identifier 获取 xPlayer 对象。"
     },
     "ESX.GetPlayerIdFromIdentifier": {
         "prefix": "ESX.GetPlayerIdFromIdentifier",
         "body": [
             "ESX.GetPlayerIdFromIdentifier('${1:identifier}')"
         ],
-        "description": "[Server] Get the server id from an identifier."
+        "description": "[服务端] 根据 identifier 获取服务器 id。"
     },
     "ESX.GetExtendedPlayers": {
         "prefix": "ESX.GetExtendedPlayers",
         "body": [
             "ESX.GetExtendedPlayers(${1:key}, ${2:val}, ${3:minimal})"
         ],
-        "description": "[Server] Get extended players, optionally filtered."
+        "description": "[服务端] 获取扩展玩家列表，可按条件过滤。"
     },
     "ESX.GetNumPlayers": {
         "prefix": "ESX.GetNumPlayers",
         "body": [
             "ESX.GetNumPlayers(${1:key}, ${2:val})"
         ],
-        "description": "[Server] Get the number of players (optionally filtered)."
+        "description": "[服务端] 获取玩家数量（可过滤）。"
     },
     "ESX.IsPlayerLoaded server": {
         "prefix": "ESX.IsPlayerLoaded server",
         "body": [
             "ESX.IsPlayerLoaded(${1:source})"
         ],
-        "description": "[Server] Returns whether a player is loaded."
+        "description": "[服务端] 返回某玩家是否已加载。"
     },
     "ESX.GetIdentifier": {
         "prefix": "ESX.GetIdentifier",
         "body": [
             "ESX.GetIdentifier(${1:playerId})"
         ],
-        "description": "[Server] Get a player's primary identifier."
+        "description": "[服务端] 获取玩家的主 identifier。"
     },
     "ESX.RegisterUsableItem": {
         "prefix": "ESX.RegisterUsableItem",
@@ -729,70 +729,70 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Server] Register a usable item callback."
+        "description": "[服务端] 注册可使用物品的回调。"
     },
     "ESX.UseItem": {
         "prefix": "ESX.UseItem",
         "body": [
             "ESX.UseItem(${1:source}, '${2:item}'${3:, ...})"
         ],
-        "description": "[Server] Programmatically use an item for a player."
+        "description": "[服务端] 以编程方式为玩家使用物品。"
     },
     "ESX.GetItemLabel": {
         "prefix": "ESX.GetItemLabel",
         "body": [
             "ESX.GetItemLabel('${1:item}')"
         ],
-        "description": "[Server] Get the display label for an item."
+        "description": "[服务端] 获取物品的显示名称。"
     },
     "ESX.GetItems": {
         "prefix": "ESX.GetItems",
         "body": [
             "ESX.GetItems()"
         ],
-        "description": "[Server] Get all registered items."
+        "description": "[服务端] 获取所有已注册物品。"
     },
     "ESX.GetUsableItems": {
         "prefix": "ESX.GetUsableItems",
         "body": [
             "ESX.GetUsableItems()"
         ],
-        "description": "[Server] Get all usable items."
+        "description": "[服务端] 获取所有可使用物品。"
     },
     "ESX.CreatePickup": {
         "prefix": "ESX.CreatePickup",
         "body": [
             "ESX.CreatePickup(${1:itemType}, '${2:name}', ${3:count}, '${4:label}', ${5:playerId}${6:, components, tintIndex, coords})"
         ],
-        "description": "[Server] Create a droppable pickup."
+        "description": "[服务端] 创建一个可拾取掉落物。"
     },
     "ESX.GetJobs": {
         "prefix": "ESX.GetJobs",
         "body": [
             "ESX.GetJobs(${1:jobType})"
         ],
-        "description": "[Server] Get all jobs."
+        "description": "[服务端] 获取所有工作。"
     },
     "ESX.DoesJobExist": {
         "prefix": "ESX.DoesJobExist",
         "body": [
             "ESX.DoesJobExist('${1:job}', ${2:grade})"
         ],
-        "description": "[Server] Returns whether a job/grade exists."
+        "description": "[服务端] 返回某工作/等级是否存在。"
     },
     "ESX.CreateJob": {
         "prefix": "ESX.CreateJob",
         "body": [
             "ESX.CreateJob('${1:name}', '${2:label}', ${3:grades}${4:, jobType})"
         ],
-        "description": "[Server] Create a job at runtime."
+        "description": "[服务端] 在运行时创建工作。"
     },
     "ESX.RefreshJobs": {
         "prefix": "ESX.RefreshJobs",
         "body": [
             "ESX.RefreshJobs()"
         ],
-        "description": "[Server] Reload jobs from the database."
+        "description": "[服务端] 从数据库重新加载工作。"
     },
     "ESX.RegisterCommand": {
         "prefix": "ESX.RegisterCommand",
@@ -801,14 +801,14 @@
             "\t$0",
             "end, ${3:false}, { help = '${4:Command description}'${5:, arguments = {}} })"
         ],
-        "description": "[Server] Register a server command with permissions."
+        "description": "[服务端] 注册带权限的服务器命令。"
     },
     "ESX.Trace": {
         "prefix": "ESX.Trace",
         "body": [
             "ESX.Trace(${1:msg})"
         ],
-        "description": "[Server] Print a trace/debug message."
+        "description": "[服务端] 打印跟踪/调试信息。"
     },
     "ESX.GetVehicleType": {
         "prefix": "ESX.GetVehicleType",
@@ -817,21 +817,21 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Server] Get a vehicle's type via a client."
+        "description": "[服务端] 通过某客户端获取载具类型。"
     },
     "ESX.DiscordLog": {
         "prefix": "ESX.DiscordLog",
         "body": [
             "ESX.DiscordLog('${1:name}', '${2:title}', '${3:color}', '${4:message}')"
         ],
-        "description": "[Server] Send a Discord webhook log."
+        "description": "[服务端] 发送 Discord webhook 日志。"
     },
     "ESX.DiscordLogFields": {
         "prefix": "ESX.DiscordLogFields",
         "body": [
             "ESX.DiscordLogFields('${1:name}', '${2:title}', '${3:color}', ${4:fields})"
         ],
-        "description": "[Server] Send a Discord webhook log with fields."
+        "description": "[服务端] 发送带字段的 Discord webhook 日志。"
     },
     "ESX.OneSync.SpawnVehicle": {
         "prefix": "ESX.OneSync.SpawnVehicle",
@@ -840,7 +840,7 @@
             "\t$0",
             "end${5:, vehicleType})"
         ],
-        "description": "[Server] Spawn a server-side (OneSync) vehicle."
+        "description": "[服务端] 生成服务端（OneSync）载具。"
     },
     "ESX.OneSync.SpawnObject": {
         "prefix": "ESX.OneSync.SpawnObject",
@@ -849,7 +849,7 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Server] Spawn a server-side (OneSync) object."
+        "description": "[服务端] 生成服务端（OneSync）物体。"
     },
     "ESX.OneSync.SpawnPed": {
         "prefix": "ESX.OneSync.SpawnPed",
@@ -858,7 +858,7 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Server] Spawn a server-side (OneSync) ped."
+        "description": "[服务端] 生成服务端（OneSync）ped。"
     },
     "ESX.OneSync.SpawnPedInVehicle": {
         "prefix": "ESX.OneSync.SpawnPedInVehicle",
@@ -867,126 +867,126 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Server] Spawn a server-side ped inside a vehicle."
+        "description": "[服务端] 在载具内生成服务端 ped。"
     },
     "ESX.OneSync.GetPlayersInArea": {
         "prefix": "ESX.OneSync.GetPlayersInArea",
         "body": [
             "ESX.OneSync.GetPlayersInArea(${1:source}, ${2:maxDistance}${3:, ignore, routingBucket})"
         ],
-        "description": "[Server] Get players within an area (OneSync)."
+        "description": "[服务端] 获取区域内的玩家（OneSync）。"
     },
     "ESX.OneSync.GetClosestPlayer": {
         "prefix": "ESX.OneSync.GetClosestPlayer",
         "body": [
             "ESX.OneSync.GetClosestPlayer(${1:source}, ${2:maxDistance}${3:, ignore, routingBucket})"
         ],
-        "description": "[Server] Get the closest player (OneSync)."
+        "description": "[服务端] 获取最近的玩家（OneSync）。"
     },
     "ESX.OneSync.GetPedsInArea": {
         "prefix": "ESX.OneSync.GetPedsInArea",
         "body": [
             "ESX.OneSync.GetPedsInArea(${1:coords}, ${2:maxDistance}${3:, modelFilter})"
         ],
-        "description": "[Server] Get peds within an area (OneSync)."
+        "description": "[服务端] 获取区域内的 ped（OneSync）。"
     },
     "ESX.OneSync.GetObjectsInArea": {
         "prefix": "ESX.OneSync.GetObjectsInArea",
         "body": [
             "ESX.OneSync.GetObjectsInArea(${1:coords}, ${2:maxDistance}${3:, modelFilter})"
         ],
-        "description": "[Server] Get objects within an area (OneSync)."
+        "description": "[服务端] 获取区域内的物体（OneSync）。"
     },
     "ESX.OneSync.GetVehiclesInArea": {
         "prefix": "ESX.OneSync.GetVehiclesInArea",
         "body": [
             "ESX.OneSync.GetVehiclesInArea(${1:coords}, ${2:maxDistance}${3:, modelFilter})"
         ],
-        "description": "[Server] Get vehicles within an area (OneSync)."
+        "description": "[服务端] 获取区域内的载具（OneSync）。"
     },
     "ESX.OneSync.GetClosestPed": {
         "prefix": "ESX.OneSync.GetClosestPed",
         "body": [
             "ESX.OneSync.GetClosestPed(${1:coords}${2:, modelFilter})"
         ],
-        "description": "[Server] Get the closest ped (OneSync)."
+        "description": "[服务端] 获取最近的 ped（OneSync）。"
     },
     "ESX.OneSync.GetClosestObject": {
         "prefix": "ESX.OneSync.GetClosestObject",
         "body": [
             "ESX.OneSync.GetClosestObject(${1:coords}${2:, modelFilter})"
         ],
-        "description": "[Server] Get the closest object (OneSync)."
+        "description": "[服务端] 获取最近的物体（OneSync）。"
     },
     "ESX.OneSync.GetClosestVehicle": {
         "prefix": "ESX.OneSync.GetClosestVehicle",
         "body": [
             "ESX.OneSync.GetClosestVehicle(${1:coords}${2:, modelFilter})"
         ],
-        "description": "[Server] Get the closest vehicle (OneSync)."
+        "description": "[服务端] 获取最近的载具（OneSync）。"
     },
     "ESX.GetWeapon": {
         "prefix": "ESX.GetWeapon",
         "body": [
             "ESX.GetWeapon('${1:weaponName}')"
         ],
-        "description": "[Shared] Get a weapon's index and data by name."
+        "description": "[共享] 根据名称获取武器索引与数据。"
     },
     "ESX.GetWeaponFromHash": {
         "prefix": "ESX.GetWeaponFromHash",
         "body": [
             "ESX.GetWeaponFromHash(${1:weaponHash})"
         ],
-        "description": "[Shared] Get a weapon's data from its hash."
+        "description": "[共享] 根据哈希获取武器数据。"
     },
     "ESX.GetWeaponList": {
         "prefix": "ESX.GetWeaponList",
         "body": [
             "ESX.GetWeaponList(${1:byHash})"
         ],
-        "description": "[Shared] Get the full weapon list."
+        "description": "[共享] 获取完整武器列表。"
     },
     "ESX.GetWeaponLabel": {
         "prefix": "ESX.GetWeaponLabel",
         "body": [
             "ESX.GetWeaponLabel('${1:weaponName}')"
         ],
-        "description": "[Shared] Get the display label for a weapon."
+        "description": "[共享] 获取武器的显示名称。"
     },
     "ESX.GetWeaponComponent": {
         "prefix": "ESX.GetWeaponComponent",
         "body": [
             "ESX.GetWeaponComponent('${1:weaponName}', '${2:weaponComponent}')"
         ],
-        "description": "[Shared] Get a weapon component's data."
+        "description": "[共享] 获取武器配件的数据。"
     },
     "ESX.GetRandomString": {
         "prefix": "ESX.GetRandomString",
         "body": [
             "ESX.GetRandomString(${1:length})"
         ],
-        "description": "[Shared] Generate a random string of a given length."
+        "description": "[共享] 生成指定长度的随机字符串。"
     },
     "ESX.GetConfig": {
         "prefix": "ESX.GetConfig",
         "body": [
             "ESX.GetConfig(${1:key})"
         ],
-        "description": "[Shared] Get the ESX config (optionally a single key)."
+        "description": "[共享] 获取 ESX 配置（可指定单个键）。"
     },
     "ESX.DumpTable": {
         "prefix": "ESX.DumpTable",
         "body": [
             "ESX.DumpTable(${1:table})"
         ],
-        "description": "[Shared] Dump a table to a readable string."
+        "description": "[共享] 将表转储为可读字符串。"
     },
     "ESX.Round": {
         "prefix": "ESX.Round",
         "body": [
             "ESX.Round(${1:value}${2:, numDecimalPlaces})"
         ],
-        "description": "[Shared] Round a number to N decimal places."
+        "description": "[共享] 将数字四舍五入到 N 位小数。"
     },
     "ESX.Await": {
         "prefix": "ESX.Await",
@@ -995,7 +995,7 @@
             "\treturn $0",
             "end${1:, errorMessage, timeoutMs})"
         ],
-        "description": "[Shared] Await until a condition function returns truthy."
+        "description": "[共享] 等待直到条件函数返回真值。"
     },
     "ESX.SetTimeout": {
         "prefix": "ESX.SetTimeout",
@@ -1004,63 +1004,63 @@
             "\t$0",
             "end)"
         ],
-        "description": "[Shared] Run a callback after a delay (cancellable)."
+        "description": "[共享] 延迟后执行回调（可取消）。"
     },
     "ESX.ClearTimeout": {
         "prefix": "ESX.ClearTimeout",
         "body": [
             "ESX.ClearTimeout(${1:id})"
         ],
-        "description": "[Shared] Cancel a pending ESX.SetTimeout."
+        "description": "[共享] 取消一个待执行的 ESX.SetTimeout。"
     },
     "ESX.Math.Round": {
         "prefix": "ESX.Math.Round",
         "body": [
             "ESX.Math.Round(${1:value}${2:, numDecimalPlaces})"
         ],
-        "description": "[Shared] Round a number to N decimal places."
+        "description": "[共享] 将数字四舍五入到 N 位小数。"
     },
     "ESX.Math.GroupDigits": {
         "prefix": "ESX.Math.GroupDigits",
         "body": [
             "ESX.Math.GroupDigits(${1:value})"
         ],
-        "description": "[Shared] Format a number with digit grouping (1,000)."
+        "description": "[共享] 按千分位格式化数字（1,000）。"
     },
     "ESX.Math.Trim": {
         "prefix": "ESX.Math.Trim",
         "body": [
             "ESX.Math.Trim(${1:value})"
         ],
-        "description": "[Shared] Trim whitespace from a string."
+        "description": "[共享] 去除字符串首尾空白。"
     },
     "ESX.Math.Random": {
         "prefix": "ESX.Math.Random",
         "body": [
             "ESX.Math.Random(${1:minRange}, ${2:maxRange})"
         ],
-        "description": "[Shared] Get a random number in a range."
+        "description": "[共享] 获取范围内的随机数。"
     },
     "ESX.Math.GetHeadingFromCoords": {
         "prefix": "ESX.Math.GetHeadingFromCoords",
         "body": [
             "ESX.Math.GetHeadingFromCoords(${1:origin}, ${2:target})"
         ],
-        "description": "[Shared] Get a heading between two coords."
+        "description": "[共享] 获取两点之间的朝向角。"
     },
     "ESX.Table.SizeOf": {
         "prefix": "ESX.Table.SizeOf",
         "body": [
             "ESX.Table.SizeOf(${1:t})"
         ],
-        "description": "[Shared] Count the entries in a table."
+        "description": "[共享] 统计表中的条目数量。"
     },
     "ESX.Table.IndexOf": {
         "prefix": "ESX.Table.IndexOf",
         "body": [
             "ESX.Table.IndexOf(${1:t}, ${2:value})"
         ],
-        "description": "[Shared] Get the first index of a value."
+        "description": "[共享] 获取某个值的首个索引。"
     },
     "ESX.Table.Find": {
         "prefix": "ESX.Table.Find",
@@ -1069,7 +1069,7 @@
             "\treturn $0",
             "end)"
         ],
-        "description": "[Shared] Find the first value matching a predicate."
+        "description": "[共享] 查找首个满足条件的值。"
     },
     "ESX.Table.Filter": {
         "prefix": "ESX.Table.Filter",
@@ -1078,7 +1078,7 @@
             "\treturn $0",
             "end)"
         ],
-        "description": "[Shared] Filter a table by a predicate."
+        "description": "[共享] 按条件过滤表。"
     },
     "ESX.Table.Map": {
         "prefix": "ESX.Table.Map",
@@ -1087,440 +1087,440 @@
             "\treturn $0",
             "end)"
         ],
-        "description": "[Shared] Map a table to a new table."
+        "description": "[共享] 将表映射为新表。"
     },
     "ESX.Table.Clone": {
         "prefix": "ESX.Table.Clone",
         "body": [
             "ESX.Table.Clone(${1:t})"
         ],
-        "description": "[Shared] Deep-clone a table."
+        "description": "[共享] 深拷贝一个表。"
     },
     "ESX.Table.Concat": {
         "prefix": "ESX.Table.Concat",
         "body": [
             "ESX.Table.Concat(${1:t1}, ${2:t2})"
         ],
-        "description": "[Shared] Concatenate two array tables."
+        "description": "[共享] 连接两个数组表。"
     },
     "ESX.Table.Sort": {
         "prefix": "ESX.Table.Sort",
         "body": [
             "ESX.Table.Sort(${1:t}, ${2:order})"
         ],
-        "description": "[Shared] Sort a table by a comparator/order."
+        "description": "[共享] 按比较器/顺序排序表。"
     },
     "xPlayer.triggerEvent": {
         "prefix": "xPlayer.triggerEvent",
         "body": [
             "xPlayer.triggerEvent('${1:eventName}'${2:, ...})"
         ],
-        "description": "Trigger a client event on this player."
+        "description": "在该玩家上触发客户端事件。"
     },
     "xPlayer.setCoords": {
         "prefix": "xPlayer.setCoords",
         "body": [
             "xPlayer.setCoords(${1:coordinates})"
         ],
-        "description": "Teleport the player to coords."
+        "description": "将玩家传送到坐标。"
     },
     "xPlayer.getCoords": {
         "prefix": "xPlayer.getCoords",
         "body": [
             "xPlayer.getCoords(${1:vector}, ${2:heading})"
         ],
-        "description": "Get the player's coords (optionally as a vector / with heading)."
+        "description": "获取玩家坐标（可选向量/含朝向）。"
     },
     "xPlayer.kick": {
         "prefix": "xPlayer.kick",
         "body": [
             "xPlayer.kick('${1:reason}')"
         ],
-        "description": "Kick the player with a reason."
+        "description": "以理由踢出玩家。"
     },
     "xPlayer.getPlayTime": {
         "prefix": "xPlayer.getPlayTime",
         "body": [
             "xPlayer.getPlayTime()"
         ],
-        "description": "Get the player's session play time."
+        "description": "获取玩家本次会话的在线时长。"
     },
     "xPlayer.isAdmin": {
         "prefix": "xPlayer.isAdmin",
         "body": [
             "xPlayer.isAdmin()"
         ],
-        "description": "Returns whether the player is an admin."
+        "description": "返回玩家是否为管理员。"
     },
     "xPlayer.setMoney": {
         "prefix": "xPlayer.setMoney",
         "body": [
             "xPlayer.setMoney(${1:money})"
         ],
-        "description": "Set the player's cash money."
+        "description": "设置玩家的现金。"
     },
     "xPlayer.getMoney": {
         "prefix": "xPlayer.getMoney",
         "body": [
             "xPlayer.getMoney()"
         ],
-        "description": "Get the player's cash money."
+        "description": "获取玩家的现金。"
     },
     "xPlayer.addMoney": {
         "prefix": "xPlayer.addMoney",
         "body": [
             "xPlayer.addMoney(${1:money}${2:, reason})"
         ],
-        "description": "Add cash money to the player."
+        "description": "给玩家增加现金。"
     },
     "xPlayer.removeMoney": {
         "prefix": "xPlayer.removeMoney",
         "body": [
             "xPlayer.removeMoney(${1:money}${2:, reason})"
         ],
-        "description": "Remove cash money from the player."
+        "description": "扣除玩家的现金。"
     },
     "xPlayer.getIdentifier": {
         "prefix": "xPlayer.getIdentifier",
         "body": [
             "xPlayer.getIdentifier()"
         ],
-        "description": "Get the player's primary identifier."
+        "description": "获取玩家的主 identifier。"
     },
     "xPlayer.getSSN": {
         "prefix": "xPlayer.getSSN",
         "body": [
             "xPlayer.getSSN()"
         ],
-        "description": "Get the player's SSN."
+        "description": "获取玩家的 SSN。"
     },
     "xPlayer.setGroup": {
         "prefix": "xPlayer.setGroup",
         "body": [
             "xPlayer.setGroup('${1:newGroup}')"
         ],
-        "description": "Set the player's permission group."
+        "description": "设置玩家的权限组。"
     },
     "xPlayer.getGroup": {
         "prefix": "xPlayer.getGroup",
         "body": [
             "xPlayer.getGroup()"
         ],
-        "description": "Get the player's permission group."
+        "description": "获取玩家的权限组。"
     },
     "xPlayer.set": {
         "prefix": "xPlayer.set",
         "body": [
             "xPlayer.set('${1:key}', ${2:value})"
         ],
-        "description": "Set a custom variable on the player."
+        "description": "在玩家上设置自定义变量。"
     },
     "xPlayer.get": {
         "prefix": "xPlayer.get",
         "body": [
             "xPlayer.get('${1:key}')"
         ],
-        "description": "Get a custom variable from the player."
+        "description": "从玩家获取自定义变量。"
     },
     "xPlayer.getAccounts": {
         "prefix": "xPlayer.getAccounts",
         "body": [
             "xPlayer.getAccounts(${1:minimal})"
         ],
-        "description": "Get all of the player's accounts."
+        "description": "获取玩家的所有账户。"
     },
     "xPlayer.getAccount": {
         "prefix": "xPlayer.getAccount",
         "body": [
             "xPlayer.getAccount('${1:account}')"
         ],
-        "description": "Get a single account (e.g. 'bank', 'money', 'black_money')."
+        "description": "获取单个账户（如 'bank'、'money'、'black_money'）。"
     },
     "xPlayer.getInventory": {
         "prefix": "xPlayer.getInventory",
         "body": [
             "xPlayer.getInventory(${1:minimal})"
         ],
-        "description": "Get the player's inventory."
+        "description": "获取玩家的库存。"
     },
     "xPlayer.getJob": {
         "prefix": "xPlayer.getJob",
         "body": [
             "xPlayer.getJob()"
         ],
-        "description": "Get the player's job table."
+        "description": "获取玩家的工作表。"
     },
     "xPlayer.getLoadout": {
         "prefix": "xPlayer.getLoadout",
         "body": [
             "xPlayer.getLoadout(${1:minimal})"
         ],
-        "description": "Get the player's weapon loadout."
+        "description": "获取玩家的武器装备。"
     },
     "xPlayer.getName": {
         "prefix": "xPlayer.getName",
         "body": [
             "xPlayer.getName()"
         ],
-        "description": "Get the player's name."
+        "description": "获取玩家的名字。"
     },
     "xPlayer.setName": {
         "prefix": "xPlayer.setName",
         "body": [
             "xPlayer.setName('${1:newName}')"
         ],
-        "description": "Set the player's name."
+        "description": "设置玩家的名字。"
     },
     "xPlayer.setAccountMoney": {
         "prefix": "xPlayer.setAccountMoney",
         "body": [
             "xPlayer.setAccountMoney('${1:accountName}', ${2:money}${3:, reason})"
         ],
-        "description": "Set the balance of an account."
+        "description": "设置某账户的余额。"
     },
     "xPlayer.addAccountMoney": {
         "prefix": "xPlayer.addAccountMoney",
         "body": [
             "xPlayer.addAccountMoney('${1:accountName}', ${2:money}${3:, reason})"
         ],
-        "description": "Add money to an account."
+        "description": "给某账户增加余额。"
     },
     "xPlayer.removeAccountMoney": {
         "prefix": "xPlayer.removeAccountMoney",
         "body": [
             "xPlayer.removeAccountMoney('${1:accountName}', ${2:money}${3:, reason})"
         ],
-        "description": "Remove money from an account."
+        "description": "从某账户扣除余额。"
     },
     "xPlayer.getInventoryItem": {
         "prefix": "xPlayer.getInventoryItem",
         "body": [
             "xPlayer.getInventoryItem('${1:itemName}')"
         ],
-        "description": "Get an inventory item entry."
+        "description": "获取某个库存物品条目。"
     },
     "xPlayer.addInventoryItem": {
         "prefix": "xPlayer.addInventoryItem",
         "body": [
             "xPlayer.addInventoryItem('${1:itemName}', ${2:count})"
         ],
-        "description": "Add an item to the player's inventory."
+        "description": "向玩家库存添加物品。"
     },
     "xPlayer.removeInventoryItem": {
         "prefix": "xPlayer.removeInventoryItem",
         "body": [
             "xPlayer.removeInventoryItem('${1:itemName}', ${2:count})"
         ],
-        "description": "Remove an item from the player's inventory."
+        "description": "从玩家库存移除物品。"
     },
     "xPlayer.setInventoryItem": {
         "prefix": "xPlayer.setInventoryItem",
         "body": [
             "xPlayer.setInventoryItem('${1:itemName}', ${2:count})"
         ],
-        "description": "Set the count of an inventory item."
+        "description": "设置某个库存物品的数量。"
     },
     "xPlayer.getWeight": {
         "prefix": "xPlayer.getWeight",
         "body": [
             "xPlayer.getWeight()"
         ],
-        "description": "Get the player's current inventory weight."
+        "description": "获取玩家当前的库存重量。"
     },
     "xPlayer.getSource": {
         "prefix": "xPlayer.getSource",
         "body": [
             "xPlayer.getSource()"
         ],
-        "description": "Get the player's server source id."
+        "description": "获取玩家的服务器 source id。"
     },
     "xPlayer.getMaxWeight": {
         "prefix": "xPlayer.getMaxWeight",
         "body": [
             "xPlayer.getMaxWeight()"
         ],
-        "description": "Get the player's maximum inventory weight."
+        "description": "获取玩家的最大库存重量。"
     },
     "xPlayer.canCarryItem": {
         "prefix": "xPlayer.canCarryItem",
         "body": [
             "xPlayer.canCarryItem('${1:itemName}', ${2:count})"
         ],
-        "description": "Returns whether the player can carry an item count."
+        "description": "返回玩家是否能携带指定数量的物品。"
     },
     "xPlayer.canSwapItem": {
         "prefix": "xPlayer.canSwapItem",
         "body": [
             "xPlayer.canSwapItem('${1:firstItem}', ${2:firstItemCount}, '${3:testItem}', ${4:testItemCount})"
         ],
-        "description": "Returns whether the player can swap items by weight."
+        "description": "返回玩家是否能按重量交换物品。"
     },
     "xPlayer.setMaxWeight": {
         "prefix": "xPlayer.setMaxWeight",
         "body": [
             "xPlayer.setMaxWeight(${1:newWeight})"
         ],
-        "description": "Set the player's maximum inventory weight."
+        "description": "设置玩家的最大库存重量。"
     },
     "xPlayer.setJob": {
         "prefix": "xPlayer.setJob",
         "body": [
             "xPlayer.setJob('${1:newJob}', ${2:grade}${3:, onDuty})"
         ],
-        "description": "Set the player's job and grade."
+        "description": "设置玩家的工作与等级。"
     },
     "xPlayer.addWeapon": {
         "prefix": "xPlayer.addWeapon",
         "body": [
             "xPlayer.addWeapon('${1:weaponName}', ${2:ammo})"
         ],
-        "description": "Give the player a weapon."
+        "description": "给玩家一把武器。"
     },
     "xPlayer.addWeaponComponent": {
         "prefix": "xPlayer.addWeaponComponent",
         "body": [
             "xPlayer.addWeaponComponent('${1:weaponName}', '${2:weaponComponent}')"
         ],
-        "description": "Add a component to a player's weapon."
+        "description": "为玩家武器添加配件。"
     },
     "xPlayer.addWeaponAmmo": {
         "prefix": "xPlayer.addWeaponAmmo",
         "body": [
             "xPlayer.addWeaponAmmo('${1:weaponName}', ${2:ammoCount})"
         ],
-        "description": "Add ammo to a player's weapon."
+        "description": "给玩家武器添加弹药。"
     },
     "xPlayer.updateWeaponAmmo": {
         "prefix": "xPlayer.updateWeaponAmmo",
         "body": [
             "xPlayer.updateWeaponAmmo('${1:weaponName}', ${2:ammoCount})"
         ],
-        "description": "Update the stored ammo of a weapon."
+        "description": "更新武器存储的弹药量。"
     },
     "xPlayer.setWeaponTint": {
         "prefix": "xPlayer.setWeaponTint",
         "body": [
             "xPlayer.setWeaponTint('${1:weaponName}', ${2:weaponTintIndex})"
         ],
-        "description": "Set a weapon's tint."
+        "description": "设置武器的染色。"
     },
     "xPlayer.getWeaponTint": {
         "prefix": "xPlayer.getWeaponTint",
         "body": [
             "xPlayer.getWeaponTint('${1:weaponName}')"
         ],
-        "description": "Get a weapon's tint index."
+        "description": "获取武器的染色索引。"
     },
     "xPlayer.removeWeapon": {
         "prefix": "xPlayer.removeWeapon",
         "body": [
             "xPlayer.removeWeapon('${1:weaponName}')"
         ],
-        "description": "Remove a weapon from the player."
+        "description": "移除玩家的武器。"
     },
     "xPlayer.removeWeaponComponent": {
         "prefix": "xPlayer.removeWeaponComponent",
         "body": [
             "xPlayer.removeWeaponComponent('${1:weaponName}', '${2:weaponComponent}')"
         ],
-        "description": "Remove a component from a player's weapon."
+        "description": "移除玩家武器的配件。"
     },
     "xPlayer.removeWeaponAmmo": {
         "prefix": "xPlayer.removeWeaponAmmo",
         "body": [
             "xPlayer.removeWeaponAmmo('${1:weaponName}', ${2:ammoCount})"
         ],
-        "description": "Remove ammo from a player's weapon."
+        "description": "扣除玩家武器的弹药。"
     },
     "xPlayer.hasWeaponComponent": {
         "prefix": "xPlayer.hasWeaponComponent",
         "body": [
             "xPlayer.hasWeaponComponent('${1:weaponName}', '${2:weaponComponent}')"
         ],
-        "description": "Returns whether a weapon has a component."
+        "description": "返回武器是否带有某配件。"
     },
     "xPlayer.hasWeapon": {
         "prefix": "xPlayer.hasWeapon",
         "body": [
             "xPlayer.hasWeapon('${1:weaponName}')"
         ],
-        "description": "Returns whether the player has a weapon."
+        "description": "返回玩家是否拥有某武器。"
     },
     "xPlayer.hasItem": {
         "prefix": "xPlayer.hasItem",
         "body": [
             "xPlayer.hasItem('${1:item}')"
         ],
-        "description": "Returns the item entry if the player has it."
+        "description": "若玩家拥有该物品则返回其条目。"
     },
     "xPlayer.getWeapon": {
         "prefix": "xPlayer.getWeapon",
         "body": [
             "xPlayer.getWeapon('${1:weaponName}')"
         ],
-        "description": "Get the loadout index of a weapon."
+        "description": "获取武器在装备中的索引。"
     },
     "xPlayer.showNotification": {
         "prefix": "xPlayer.showNotification",
         "body": [
             "xPlayer.showNotification('${1:msg}'${2:, notifyType, length, title, position})"
         ],
-        "description": "Show a notification to the player."
+        "description": "向玩家显示一条通知。"
     },
     "xPlayer.showAdvancedNotification": {
         "prefix": "xPlayer.showAdvancedNotification",
         "body": [
             "xPlayer.showAdvancedNotification('${1:sender}', '${2:subject}', '${3:msg}', '${4:textureDict}', ${5:iconType}${6:, flash, saveToBrief, hudColorIndex})"
         ],
-        "description": "Show an advanced notification to the player."
+        "description": "向玩家显示高级通知。"
     },
     "xPlayer.showHelpNotification": {
         "prefix": "xPlayer.showHelpNotification",
         "body": [
             "xPlayer.showHelpNotification('${1:msg}'${2:, thisFrame, beep, duration})"
         ],
-        "description": "Show a help notification to the player."
+        "description": "向玩家显示帮助提示。"
     },
     "xPlayer.getMeta": {
         "prefix": "xPlayer.getMeta",
         "body": [
             "xPlayer.getMeta(${1:index}${2:, subIndex})"
         ],
-        "description": "Get player metadata."
+        "description": "获取玩家元数据。"
     },
     "xPlayer.setMeta": {
         "prefix": "xPlayer.setMeta",
         "body": [
             "xPlayer.setMeta(${1:index}, ${2:value}${3:, subValue})"
         ],
-        "description": "Set player metadata."
+        "description": "设置玩家元数据。"
     },
     "xPlayer.clearMeta": {
         "prefix": "xPlayer.clearMeta",
         "body": [
             "xPlayer.clearMeta(${1:index}${2:, subValues})"
         ],
-        "description": "Clear player metadata."
+        "description": "清除玩家元数据。"
     },
     "xPlayer.executeCommand": {
         "prefix": "xPlayer.executeCommand",
         "body": [
             "xPlayer.executeCommand('${1:command}')"
         ],
-        "description": "Execute a command as the player."
+        "description": "以该玩家身份执行命令。"
     },
     "xPlayer.togglePaycheck": {
         "prefix": "xPlayer.togglePaycheck",
         "body": [
             "xPlayer.togglePaycheck(${1:toggle})"
         ],
-        "description": "Enable/disable the player's paycheck."
+        "description": "启用/禁用玩家的工资。"
     },
     "xPlayer.isPaycheckEnabled": {
         "prefix": "xPlayer.isPaycheckEnabled",
         "body": [
             "xPlayer.isPaycheckEnabled()"
         ],
-        "description": "Returns whether the player's paycheck is enabled."
+        "description": "返回玩家工资是否启用。"
     }
 }
