@@ -1,867 +1,1526 @@
 {
-    "RegisterCommand": {
-        "prefix": "ESX.RegisterCommand",
+    "ESX SharedObject": {
+        "prefix": "ESX.SharedObject",
         "body": [
-            "ESX.RegisterCommand({'clear', 'cls'}, 'user', function(xPlayer, args, showError)",
-            "    xPlayer.triggerEvent('chat:clear')",
-            "end, false, {help = _U('command_clear')})",
-            "-- https://docs.esx-framework.org/legacy/Server/functions/registercommand"
-        ]
+            "ESX = exports['es_extended']:getSharedObject()"
+        ],
+        "description": "Get the shared ESX object."
     },
-    "PlayerLoaded": {
-        "prefix": "ESX:playerloaded",
+    "Event playerLoaded": {
+        "prefix": "ESX:playerLoaded",
         "body": [
-            "RegisterNetEvent('esx:playerLoaded')",
-            "AddEventHandler('esx:playerLoaded', function(playerData)",
-                "$0",
-            "end)",
-            "-- https://docs.esx-framework.org/legacy/Client/events/playerloaded"
-        ]
+            "RegisterNetEvent('esx:playerLoaded', function(playerData${1:, isNew, skin})",
+            "\t$0",
+            "end)"
+        ],
+        "description": "Client event triggered when the player is fully loaded."
     },
-    "AdvancedNotification": {
-        "prefix": "ESX:showAdvancedNotification event",
-        "body": [
-            "TriggerClientEvent('esx:showAdvancedNotification', source, title, subject, msg, icon, iconType)",
-            "-- https://docs.esx-framework.org/legacy/Client/events/showadvancednotification"
-        ]
-    },
-    "showHelpNotification": {
-        "prefix": "ESX:showHelpNotification event",
-        "body": [
-            "TriggerClientEvent('esx:showHelpNotification', source, 'Hit ~INPUT_CONTEXT~ to do shit!')",
-            "-- https://docs.esx-framework.org/legacy/Client/events/showhelpnotification"
-        ]
-    },
-    "showNotification": {
-        "prefix": "ESX:showNotification event",
-        "body": [
-            "TriggerClientEvent('esx:showNotification', source, 'Hello world!', type, time)",
-            "-- https://docs.esx-framework.org/legacy/Client/events/shownotification"
-        ]
-    },
-    "GetPlayerData": {
-        "prefix": "ESX.GetPlayerData",
-        "body": [
-            "ESX.GetPlayerData()"
-        ]
-    },
-    "IsPlayerLoaded": {
-        "prefix": "ESX.IsPlayerLoaded",
-        "body": [
-            "ESX.IsPlayerLoaded()"
-        ]
-    },
-    "SetPlayerData": {
-        "prefix": "ESX.SetPlayerData",
-        "body": [
-            "ESX.SetPlayerData(key, val)"
-        ]
-    },
-    "AdvancedNotification2": {
-        "prefix": "ESX:showAdvancedNotification function",
-        "body": [
-            "ESX.ShowAdvancedNotification(sender, subject, msg, textureDict, iconType, flash, saveToBrief, hudColorIndex)",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/showadvancednotification"
-        ]
-    },
-    "ShowFloatingHelpNotification": {
-        "prefix": "ESX.ShowFloatingHelpNotification",
-        "body": [
-            "local coords = GetEntityCoords(PlayerPedId())",
-            "ESX.ShowFloatingHelpNotification('Your Notification', vector3(coords.x, coords.y, coords.z))",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/showfloatinghelpnotification"
-        ]
-    },
-    "ShowHelpNotification2": {
-        "prefix": "ESX:showHelpNotification function",
-        "body": [
-            "ESX.ShowHelpNotification('Hit ~INPUT_CONTEXT~ to do shit!')",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/showhelpnotification"
-        ]
-    },
-    "ShowInventory": {
-        "prefix": "ESX.ShowInventory",
-        "body": [
-            "ESX.ShowInventory()"
-        ]
-    },
-    "ShowNotification2": {
-        "prefix": "ESX.ShowNotification",
-        "body": [
-            "ESX.ShowNotification(msg, time, type)",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/shownotification"
-        ]
-    },
-    "TriggerServerCallback": {
-        "prefix": "ESX.TriggerServerCallback",
-        "body": [
-            "local data2 = 'data'",
-            "ESX.TriggerServerCallback('esx:bestframework', function(data)",
-            "   print(data)",
-            "end, data2)",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/triggerservercallback"
-        ]
-    },
-    "DeleteObj": {
-        "prefix": "ESX.Game.DeleteObject",
-        "body": [
-            "ESX.Game.DeleteObject(obj)"
-        ]
-    },
-    "DeleteVehicle": {
-        "prefix": "ESX.Game.DeleteVehicle",
-        "body": [
-            "ESX.Game.DeleteVehicle(veh)"
-        ]
-    },
-    "GetClosestEntity": {
-        "prefix": "ESX.Game.GetClosestEntity",
-        "body": [
-            "ESX.Game.GetClosestEntity(pos, filter)"
-        ]
-    },
-    "GetClosestObject": {
-        "prefix": "ESX.Game.GetClosestObject",
-        "body": [
-            "ESX.Game.GetClosestObject(pos, filter)"
-        ]
-    },
-    "GetClosestPed": {
-        "prefix": "ESX.Game.GetClosestPed", 
-        "body": [
-            "ESX.Game.GetClosestPed(pos, filter)"
-        ]
-    },
-    "GetClosestPlayer": {
-        "prefix": "ESX.Game.GetClosestPlayer",
-        "body": [
-            "ESX.Game.GetClosestPlayer(pos)"
-        ]
-    },
-    "GetClosestVehicle": {
-        "prefix": "ESX.Game.GetClosestVehicle",
-        "body": [
-            "ESX.Game.GetClosestVehicle(pos, filter)"
-        ]
-    },
-    "GetObjects": {
-        "prefix": "ESX.Game.GetObjects",
-        "body": [
-            "ESX.Game.GetObjects()"
-        ]
-    },
-    "GetPedMugShot": {
-        "prefix": "ESX.Game.GetPedMugShot",
-        "body": [
-            "local shot, shotStr = ESX.Game.GetPedMugShot(ped)"
-        ]
-    },
-    "GetPeds": {
-        "prefix": "ESX.Game.GetPeds",
-        "body": [
-            "ESX.Game.GetPeds(peds)"
-        ]
-    },
-    "GetPlayers": {
-        "prefix": "ESX.Game.GetPlayers",
-        "body": [
-            "ESX.Game.GetPlayers(players, value, peds)"
-        ]
-    },
-    "GetPlayersInArea": {
-        "prefix": "ESX.Game.GetPlayersInArea",
-        "body": [
-            "ESX.Game.GetPlayersInArea(pos, dist)"
-        ]
-    },
-    "GetVehicleDirection": {
-        "prefix": "ESX.Game.GetVehicleDirection",
-        "body": [
-            "ESX.Game.GetVehicleDirection()"
-        ]
-    },
-    "GetVehicleProperties": {
-        "prefix": "ESX.Game.GetVehicleProperties",
-        "body": [
-            "ESX.Game.GetVehicleProperties(veh)"
-        ]
-    },
-    "GetVehicles": {
-        "prefix": "ESX.Game.GetVehicles",
-        "body": [
-            "ESX.Game.GetVehicles()"
-        ]
-    },
-    "GetVehiclesInArea": {
-        "prefix": "ESX.Game.GetVehiclesInArea",
-        "body": [
-            "ESX.Game.GetVehiclesInArea(pos, dist)"
-        ]
-    },
-    "IsSpawnPointClear": {
-        "prefix": "ESX.Game.IsSpawnPointClear",
-        "body": [
-            "ESX.Game.IsSpawnPointClear(pos, dist)"
-        ]
-    },
-    "IsVehicleEmpty": {
-        "prefix": "ESX.Game.IsVehicleEmpty",
-        "body": [
-            "ESX.Game.IsVehicleEmpty(veh)"
-        ]
-    },
-    "SetVehicleProperties": {
-        "prefix": "ESX.Game.SetVehicleProperties",
-        "body": [
-            "ESX.Game.SetVehicleProperties(veh, props) -- information in documentation: https://docs.esx-framework.org/legacy/Client/functions/game/setvehicleproperties"
-        ]
-    },
-    "SpawnLocalObject": {
-        "prefix": "ESX.Game.SpawnLocalObject",
-        "body": [
-            "ESX.Game.SpawnLocalObject(model/hash, pos, cb)"
-        ]
-    },
-    "SpawnLocalVehicle": {
-        "prefix": "ESX.Game.SpawnLocalVehicle",
-        "body": [
-            "ESX.Game.SpawnLocalVehicle(model/hash, pos, heading, cb)"
-        ]
-    },
-    "SpawnObject": {
-        "prefix": "ESX.Game.SpawnObject",
-        "body": [
-            "ESX.Game.SpawnObject(model/hash, pos, cb)"
-        ]
-    },
-    "SpawnVehicle": {
-        "prefix": "ESX.Game.SpawnVehicle",
-        "body": [
-            "ESX.Game.SpawnVehicle(model/hash, pos, heading, cb)"
-        ]
-    },
-    "teleport": {
-        "prefix": "ESX.Game.Teleport",
-        "body": [
-            "ESX.Game.Teleport(entity, pos, cb)"
-        ]
-    },
-    "DrawText3d": {
-        "prefix": "ESX.Game.Utils.DrawText3D",
-        "body": [
-            "ESX.Game.Utils.DrawText3D(pos, text, size, font)"
-        ]
-    },
-    "ShowBreakingNews": {
-        "prefix": "ESX.Scaleform.ShowBreakingNews",
-        "body": [
-            "ESX.Scaleform.ShowBreakingNews(title, msg, bottom, sec)"
-        ]
-    },
-    "ShowFreemodeMessage": {
-        "prefix": "ESX.Scaleform.ShowFreemodeMessage",
-        "body": [
-            "ESX.Scaleform.ShowFreemodeMessage(title, msg, sec)"
-        ]
-    },
-    "ShowPopupWarning": {
-        "prefix": "ESX.Scaleform.ShowPopupWarning",
-        "body": [
-            "ESX.Scaleform.ShowPopupWarning(title, msg, bottom, sec)"
-        ]
-    },
-    "ShowTrafficMovie": {
-        "prefix": "ESX.Scaleform.ShowTrafficMovie",
-        "body": [
-            "ESX.Scaleform.ShowTrafficMovie(sec)"
-        ]
-    },
-    "RequestScaleformMovie": {
-        "prefix": "ESX.Scaleform.RequestScaleformMovie",
-        "body": [
-            "ESX.Scaleform.RequestScaleformMovie(movie)"
-        ]
-    },
-    "RequestAnimDict": {
-        "prefix": "ESX.Streaming.RequestAnimDict",
-        "body": [
-            "ESX.Streaming.RequestAnimDict(dict, cb)"
-        ]
-    },
-    "RequestAnimSet": {
-        "prefix": "ESX.Streaming.RequestAnimSet",
-        "body": [
-            "ESX.Streaming.RequestAnimSet(set, cb)"
-        ]
-    },
-    "RequestModel": {
-        "prefix": "ESX.Streaming.RequestModel",
-        "body": [
-            "ESX.Streaming.RequestModel(model, cb)"
-        ]
-    },
-    "RequestNamedPtfxAsset": {
-        "prefix": "ESX.Streaming.RequestNamedPtfxAsset",
-        "body": [
-            "ESX.Streaming.RequestNamedPtfxAsset(asset, cb)"
-        ]
-    },
-    "RequestStreamedTextureDict": {
-        "prefix": "ESX.Streaming.RequestStreamedTextureDict",
-        "body": [
-            "ESX.Streaming.RequestStreamedTextureDict(texture, cb)"
-        ]
-    },
-    "RequestWeaponAsset": {
-        "prefix": "ESX.Streaming.RequestWeaponAsset",
-        "body": [
-            "ESX.Streaming.RequestWeaponAsset(hash, cb)"
-        ]
-    },
-    "ShowInventoryItemNotification": {
-        "prefix": "ESX.UI.ShowInventoryItemNotification",
-        "body": [
-            "ESX.UI.ShowInventoryItemNotification(add, item, count)"
-        ]
-    },
-    "RegisterElement": {
-        "prefix": "ESX.UI.HUD.RegisterElement",
-        "body": [
-            "ESX.UI.HUD.RegisterElement(name, index, prio, html, data)"
-        ]
-    },
-    "RemoveElement": {
-        "prefix": "ESX.UI.HUD.RemoveElement",
-        "body": [
-            "ESX.UI.HUD.RemoveElement(name)"
-        ]
-    },
-    "SetDisplay": {
-        "prefix": "ESX.UI.HUD.SetDisplay",
-        "body": [
-            "ESX.UI.HUD.SetDisplay(opacity)"
-        ]
-    },
-    "UpdateElement": {
-        "prefix": "ESX.UI.HUD.UpdateElement",
-        "body": [
-            "ESX.UI.HUD.UpdateElement(name, data)"
-        ]
-    },
-    "Close": {
-        "prefix": "ESX.UI.Menu.Close",
-        "body": [
-            "ESX.UI.Menu.Close(type, namespace, name)"
-        ]
-    },
-    "Closeall": {
-        "prefix": "ESX.UI.Menu.Closeall",
-        "body": [
-            "ESX.UI.Menu.CloseAll()"
-        ]
-    },
-    "GetOpened": {
-        "prefix": "ESX.UI.Menu.GetOpened",
-        "body": [
-            "ESX.UI.Menu.GetOpened(type, namespace, name)"
-        ]
-    },
-    "IsOpen": {
-        "prefix": "ESX.UI.Menu.IsOpen",
-        "body": [
-            "ESX.UI.Menu.IsOpen(type, namespace, name)"
-        ]
-    },
-    "Open": {
-        "prefix": "ESX.UI.Menu.Open",
-        "body": [
-            "ESX.UI.Menu.Open(type, namespace, name, data, submit, cancel, change, close)"
-        ]
-    },
-    "RegisterType": {
-        "prefix": "ESX.UI.Menu.RegisterType",
-        "body": [
-            "ESX.UI.Menu.RegisterType(type, open, close)"
-        ]
-    },
-    "onPlayerDeath": {
+    "Event onPlayerDeath": {
         "prefix": "ESX:onPlayerDeath",
         "body": [
             "AddEventHandler('esx:onPlayerDeath', function(data)",
-            "   print('oops.. Player is death')",
+            "\t$0",
             "end)"
-        ]
+        ],
+        "description": "Client event triggered when the player dies."
     },
-    "DumpTable": {
-        "prefix": "ESX.DumpTable",
+    "Event onPlayerLogout": {
+        "prefix": "ESX:onPlayerLogout",
         "body": [
-            "ESX.DumpTable(table)"
-        ]
-    },
-    "GetConfig": {
-        "prefix": "ESX.GetConfig",
-        "body": [
-            "ESX.GetConfig()"
-        ]
-    },
-    "GetRandomString": {
-        "prefix": "ESX.GetRandomString",
-        "body": [
-            "ESX.GetRandomString(length)"
-        ]
-    },
-    "GetWeapon": {
-        "prefix": "ESX.GetWeapon",
-        "body": [
-            "ESX.GetWeapon(weaponName)"
-        ]
-    },
-    "GetWeaponComponent": {
-        "prefix": "ESX.GetWeaponComponent",
-        "body": [
-            "ESX.GetWeaponComponent(weaponName, weaponComponent)"
-        ]
-    },
-    "GetWeaponLabel": {
-        "prefix": "ESX.GetWeaponLabel",
-        "body": [
-            "ESX.GetWeaponLabel(weaponName)"
-        ]
-    },
-    "GetWeaponList": {
-        "prefix": "ESX.GetWeaponList",
-        "body": [
-            "ESX.GetWeaponList()"
-        ]
-    },
-    "Math.GroupDigits": {
-        "prefix": "ESX.Math.GroupDigits",
-        "body": [
-            "ESX.Math.GroupDigits(val)",
-            "-- https://docs.esx-framework.org/legacy/Common/functions/groupdigits"
-        ]
-    },
-    "Math.round": {
-        "prefix": "ESX.Math.Round",
-        "body": [
-            "ESX.Math.Round(val, numDecimals)",
-            "-- https://docs.esx-framework.org/legacy/Common/functions/round"
-        ]
-    },
-    "Math.Trim": {
-        "prefix": "ESX.Math.Trim",
-        "body": [
-            "ESX.Math.Trim(val)",
-            "-- https://docs.esx-framework.org/legacy/Common/functions/trim"
-        ]
-    },
-    "ClearTimeout": {
-        "prefix": "ESX.ClearTimeout",
-        "body": [
-            "ESX.ClearTimeout(id)"
-        ]
-    },
-    "CreatePickup": {
-        "prefix": "ESX.CreatePickup",
-        "body": [
-            "ESX.CreatePickup(type, name, count, label, playerId, components, tintIndex)"
-        ]
-    },
-    "DoesJobExist": {
-        "prefix": "ESX.DoesJobExist",
-        "body": [
-            "ESX.DoesJobExist(job, grade)"
-        ]
-    },
-    "GetExtendedPlayers": {
-        "prefix": "ESX.GetExtendedPlayers",
-        "body": [
-            "ESX.GetExtendedPlayers(key, val)"
-        ]
-    },
-    "GetItemLabel": {
-        "prefix": "ESX.GetItemLabel",
-        "body": [
-            "ESX.GetItemLabel(item)"
-        ]
-    },
-    "GetJobs": {
-        "prefix": "ESX.GetJobs",
-        "body": [
-            "ESX.GetJobs()"
-        ]
-    },
-    "GetPlayerFromId": {
-        "prefix": "ESX.GetPlayerFromId",
-        "body": [
-            "ESX.GetPlayerFromId(PlayerId)"
-        ]
-    },
-    "GetPlayerFromIdentifier": {
-        "prefix": "ESX.GetPlayerFromIdentifier",
-        "body": [
-            "ESX.GetPlayerFromIdentifier(identifier)"
-        ]
-    },
-    "GetPlayers sv": {
-        "prefix": "ESX.GetPlayers",
-        "body": [
-            "ESX.GetPlayers()"
-        ]
-    },
-    "RegisterServerCallback": {
-        "prefix": "ESX.RegisterServerCallback",
-        "body": [
-            "local server = 'my server'",
-            "ESX.RegisterServerCallback('esx:bestframework', function(src, cb, param1, param2)",
-            "   cb(server)",
-            "end)",
-            "-- https://docs.esx-framework.org/legacy/Server/functions/registerservercallback"
-        ]
-    },
-    "RegisterUsableItem": {
-        "prefix": "ESX.RegisterUsableItem",
-        "body": [
-            "ESX.RegisterUsableItem('bread', function(playerId)",
-            "   local xPlayer = ESX.GetPlayerFromId(playerId)",
-            "   xPlayer.removeInventoryItem('bread', 1)",
-            "   xPlayer.showNotification('That was delicious.. right?')",
-            "end)",
-            "-- https://docs.esx-framework.org/legacy/Server/functions/registerusableitem"
-        ]
-    },
-    "SetTimeout": {
-        "prefix": "ESX.SetTimeout",
-        "body": [
-            "local Timeout = ESX.SetTimeout(5000, function()",
-            "   print('xD')",
+            "RegisterNetEvent('esx:onPlayerLogout', function()",
+            "\t$0",
             "end)"
-        ]
+        ],
+        "description": "Client event triggered when the player logs out."
     },
-    "Trace": {
-        "prefix": "ESX.Trace",
+    "Event setJob": {
+        "prefix": "ESX:setJob",
         "body": [
-            "ESX.Trace(msg)"
-        ]
+            "RegisterNetEvent('esx:setJob', function(job, lastJob)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "Triggered when a player's job changes."
     },
-    "UseItem": {
-        "prefix": "ESX.UseItem",
+    "Event playerLoadedServer": {
+        "prefix": "esx:playerLoaded server",
         "body": [
-            "ESX.UseItem(PlayerId, itemName)"
-        ]
+            "AddEventHandler('esx:playerLoaded', function(playerId, xPlayer)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "Server event triggered when a player is loaded."
     },
-    "addAccountMoney": {
-        "prefix": "xPlayer.addAccountMoney",
+    "Event playerDropped": {
+        "prefix": "esx:playerDropped",
         "body": [
-            "xPlayer.addAccountMoney(account, money)"
-        ]
+            "AddEventHandler('esx:playerDropped', function(playerId, reason)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "Server event triggered when a player drops."
     },
-    "addInventoryItem": {
-        "prefix": "xPlayer.addInventoryItem",
+    "ESX.GetPlayerData": {
+        "prefix": "ESX.GetPlayerData",
         "body": [
-            "xPlayer.addInventoryItem(item, count)"
-        ]
+            "ESX.GetPlayerData()"
+        ],
+        "description": "[Client] Returns the current player's data table."
     },
-    "addMoney": {
-        "prefix": "xPlayer.addMoney",
+    "ESX.IsPlayerLoaded client": {
+        "prefix": "ESX.IsPlayerLoaded",
         "body": [
-            "xPlayer.addMoney(money)"
-        ]
+            "ESX.IsPlayerLoaded()"
+        ],
+        "description": "[Client] Returns whether the player has fully loaded."
     },
-    "addWeapon": {
-        "prefix": "xPlayer.addWeapon",
+    "ESX.SetPlayerData": {
+        "prefix": "ESX.SetPlayerData",
         "body": [
-            "xPlayer.addWeapon(weaponName, ammo)"
-        ]
+            "ESX.SetPlayerData(${1:key}, ${2:val})"
+        ],
+        "description": "[Client] Sets a key on the local player data."
     },
-    "addWeaponAmmo": {
-        "prefix": "xPlayer.addWeaponAmmo",
+    "ESX.GetAccount client": {
+        "prefix": "ESX.GetAccount",
         "body": [
-            "xPlayer.addWeaponAmmo(weaponName, ammoCount)"
-        ]
+            "ESX.GetAccount(${1:account})"
+        ],
+        "description": "[Client] Returns one of the local player's accounts."
     },
-    "addWeaponComponent": {
-        "prefix": "xPlayer.addWeaponComponent",
+    "ESX.SearchInventory": {
+        "prefix": "ESX.SearchInventory",
         "body": [
-            "xPlayer.addWeaponComponent(weaponName, weaponComponent)"
-        ]
+            "ESX.SearchInventory(${1:items}, ${2:count})"
+        ],
+        "description": "[Client] Search the player's inventory for one or more items."
     },
-    "canCarryItem": {
-        "prefix": "xPlayer.canCarryItem",
+    "ESX.SpawnPlayer": {
+        "prefix": "ESX.SpawnPlayer",
         "body": [
-            "xPlayer.canCarryItem(item, count)"
-        ]
+            "ESX.SpawnPlayer(${1:skin}, ${2:coords}, function()",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Client] Spawn the player with a skin at the given coords."
     },
-    "canSwapItem": {
-        "prefix": "xPlayer.canSwapItem",
+    "ESX.DisableSpawnManager": {
+        "prefix": "ESX.DisableSpawnManager",
         "body": [
-            "xPlayer.canSwapItem(firstItem, firstItemCount, testItem, testItemCount)"
-        ]
+            "ESX.DisableSpawnManager()"
+        ],
+        "description": "[Client] Disable the default spawnmanager handling."
     },
-    "getAccount": {
-        "prefix": "xPlayer.getAccount",
+    "ESX.SecureNetEvent": {
+        "prefix": "ESX.SecureNetEvent",
         "body": [
-            "xPlayer.getAccount(account)"
-        ]
+            "ESX.SecureNetEvent('${1:eventName}', function(${2:data})",
+            "\t$0",
+            "end)"
+        ],
+        "description": "Register a net event with built-in source validation."
     },
-    "getAccounts": {
-        "prefix": "xPlayer.getAccounts",
+    "ESX.ShowNotification": {
+        "prefix": "ESX.ShowNotification",
         "body": [
-            "xPlayer.getAccounts()"
-        ]
+            "ESX.ShowNotification(${1:message}, ${2:notifyType}, ${3:length}, ${4:title}, ${5:position})"
+        ],
+        "description": "[Client] Show a notification (esx_notify)."
     },
-    "getCoords": {
-        "prefix": "xPlayer.getCoords",
+    "ESX.ShowAdvancedNotification": {
+        "prefix": "ESX.ShowAdvancedNotification",
         "body": [
-            "xPlayer.getCoords(useVec)"
-        ]
+            "ESX.ShowAdvancedNotification(${1:sender}, ${2:subject}, ${3:msg}, ${4:textureDict}, ${5:iconType}, ${6:flash}, ${7:saveToBrief}, ${8:hudColorIndex})"
+        ],
+        "description": "[Client] Show an advanced (GTA feed) notification."
     },
-    "getGroup": {
-        "prefix": "xPlayer.getGroup",
+    "ESX.ShowHelpNotification": {
+        "prefix": "ESX.ShowHelpNotification",
         "body": [
-            "xPlayer.getGroup()"
-        ]
+            "ESX.ShowHelpNotification(${1:msg}, ${2:thisFrame}, ${3:beep}, ${4:duration})"
+        ],
+        "description": "[Client] Show a help notification in the top-left corner."
     },
-    "getIdentifier": {
-        "prefix": "xPlayer.getIdentifier",
+    "ESX.ShowFloatingHelpNotification": {
+        "prefix": "ESX.ShowFloatingHelpNotification",
         "body": [
-            "xPlayer.getIdentifier()"
-        ]
+            "ESX.ShowFloatingHelpNotification(${1:msg}, ${2:coords})"
+        ],
+        "description": "[Client] Show a help notification floating at world coords."
     },
-    "getInventory": {
-        "prefix": "xPlayer.getInventory",
+    "ESX.DrawMissionText": {
+        "prefix": "ESX.DrawMissionText",
         "body": [
-            "xPlayer.getInventory(minimal)"
-        ]
+            "ESX.DrawMissionText(${1:msg}, ${2:time})"
+        ],
+        "description": "[Client] Draw subtitle/mission text for a duration."
     },
-    "getInventoryItem": {
-        "prefix": "xPlayer.getInventoryItem",
+    "ESX.TextUI": {
+        "prefix": "ESX.TextUI",
         "body": [
-            "xPlayer.getInventoryItem(item)"
-        ]
+            "ESX.TextUI('${1:message}', '${2:info}')"
+        ],
+        "description": "[Client] Show a persistent TextUI (esx_textui)."
     },
-    "getJob": {
-        "prefix": "xPlayer.getJob",
+    "ESX.HideUI": {
+        "prefix": "ESX.HideUI",
         "body": [
-            "xPlayer.getJob()"
-        ]
+            "ESX.HideUI()"
+        ],
+        "description": "[Client] Hide the active TextUI."
     },
-    "getLoadout": {
-        "prefix": "xPlayer.getLoadout",
+    "ESX.Progressbar": {
+        "prefix": "ESX.Progressbar",
         "body": [
-            "xPlayer.getLoadout()"
-        ]
+            "ESX.Progressbar('${1:message}', ${2:length}, {",
+            "\twhileDead = ${3:false},",
+            "\tcanCancel = ${4:true},",
+            "\tdisableControls = { disableMovement = ${5:false} },",
+            "\tanimation = {},",
+            "\tonFinish = function()",
+            "\t\t$0",
+            "\tend,",
+            "\tonCancel = function() end",
+            "})"
+        ],
+        "description": "[Client] Show a progress bar (esx_progressbar)."
     },
-    "getMissingAccounts": {
-        "prefix": "xPlayer.getMissingAccounts",
+    "ESX.CancelProgressbar": {
+        "prefix": "ESX.CancelProgressbar",
         "body": [
-            "xPlayer.getMissingAccounts(cb)"
-        ]
+            "ESX.CancelProgressbar()"
+        ],
+        "description": "[Client] Cancel the active progress bar."
     },
-    "getMoney": {
-        "prefix": "xPlayer.getMoney",
+    "ESX.HashString": {
+        "prefix": "ESX.HashString",
         "body": [
-            "xPlayer.getMoney()"
-        ]
+            "ESX.HashString('${1:str}')"
+        ],
+        "description": "[Client] Hash a string into a control input hash."
     },
-    "getName": {
-        "prefix": "xPlayer.getName",
+    "ESX.ShowInventory": {
+        "prefix": "ESX.ShowInventory",
         "body": [
-            "xPlayer.getName()"
-        ]
+            "ESX.ShowInventory()"
+        ],
+        "description": "[Client] Open the default inventory UI."
     },
-    "getWeapon": {
-        "prefix": "xPlayer.getWeapon",
+    "ESX.UI.ShowInventoryItemNotification": {
+        "prefix": "ESX.UI.ShowInventoryItemNotification",
         "body": [
-            "xPlayer.getWeapon(weaponName)"
-        ]
+            "ESX.UI.ShowInventoryItemNotification(${1:add}, ${2:item}, ${3:count})"
+        ],
+        "description": "[Client] Show an item added/removed notification."
     },
-    "getWeaponTint": {
-        "prefix": "xPlayer.getWeaponTint",
+    "ESX.OpenContext": {
+        "prefix": "ESX.OpenContext",
         "body": [
-            "xPlayer.getWeaponTint(weaponName, weaponTintIndex)"
-        ]
+            "ESX.OpenContext('${1:right}', {",
+            "\t{ title = '${2:Title}', description = '${3:Description}', icon = '${4:fas fa-circle}' }",
+            "}, function(menu, element)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Client] Open a context menu (esx_context)."
     },
-    "getWeight": {
-        "prefix": "xPlayer.getWeight",
+    "ESX.PreviewContext": {
+        "prefix": "ESX.PreviewContext",
         "body": [
-            "xPlayer.getWeight()"
-        ]
+            "ESX.PreviewContext(${1:data})"
+        ],
+        "description": "[Client] Preview a context menu without opening it."
     },
-    "hasItem": {
-        "prefix": "xPlayer.hasItem",
+    "ESX.CloseContext": {
+        "prefix": "ESX.CloseContext",
         "body": [
-            "xPlayer.hasItem(item, metadata)"
-        ]
+            "ESX.CloseContext()"
+        ],
+        "description": "[Client] Close the active context menu."
     },
-    "hasWeapon": {
-        "prefix": "xPlayer.hasWeapon",
+    "ESX.RefreshContext": {
+        "prefix": "ESX.RefreshContext",
         "body": [
-            "xPlayer.hasWeapon(weaponName)"
-        ]
-    },
-    "hasWeaponComponent": {
-        "prefix": "xPlayer.hasWeaponComponent",
-        "body": [
-            "xPlayer.hasWeaponComponent(weaponName, weaponComponent)"
-        ]
-    },
-    "kick": {
-        "prefix": "xPlayer.kick",
-        "body": [
-            "xPlayer.kick(reason)"
-        ]
-    },
-    "removeAccountMoney": {
-        "prefix": "xPlayer.removeAccountMoney",
-        "body": [
-            "xPlayer.removeAccountMoney(account, money)"
-        ]
-    },
-    "removeInventoryItem": {
-        "prefix": "xPlayer.removeInventoryItem",
-        "body": [
-            "xPlayer.removeInventoryItem(item, count)"
-        ]
-    },
-    "removeMoney": {
-        "prefix": "xPlayer.removeMoney",
-        "body": [
-            "xPlayer.removeMoney(money)"
-        ]
-    },
-    "removeWeapon": {
-        "prefix": "xPlayer.removeWeapon",
-        "body": [
-            "xPlayer.removeWeapon(weaponName)"
-        ]
-    },
-    "removeWeaponAmmo": {
-        "prefix": "xPlayer.removeWeaponAmmo",
-        "body": [
-            "xPlayer.removeWeaponAmmo(weaponName, ammoCount)"
-        ]
-    },
-    "removeWeaponComponent": {
-        "prefix": "xPlayer.removeWeaponComponent",
-        "body": [
-            "xPlayer.removeWeaponComponent(weaponName, weaponComponent)"
-        ]
-    },
-    "setAccountMoney": {
-        "prefix": "xPlayer.setAccountMoney",
-        "body": [
-            "xPlayer.setAccountMoney(account, money)"
-        ]
-    },
-    "setCoords": {
-        "prefix": "xPlayer.setCoords",
-        "body": [
-            "xPlayer.setCoords(coords)"
-        ]
-    },
-    "setInventoryItem": {
-        "prefix": "xPlayer.setInventoryItem",
-        "body": [
-            "xPlayer.setInventoryItem(item, count)"
-        ]
-    },
-    "setJob": {
-        "prefix": "xPlayer.setJob",
-        "body": [
-            "xPlayer.setJob(name, grade)"
-        ]
-    },
-    "setMaxWeight": {
-        "prefix": "xPlayer.setMaxWeight",
-        "body": [
-            "xPlayer.setMaxWeight(newWeight)"
-        ]
-    },
-    "setMoney": {
-        "prefix": "xPlayer.setMoney",
-        "body": [
-            "xPlayer.setMoney(money)"
-        ]
-    },
-    "setName": {
-        "prefix": "xPlayer.setName",
-        "body": [
-            "xPlayer.setName(newName)"
-        ]
-    },
-    "setWeaponTint": {
-        "prefix": "xPlayer.setWeaponTint",
-        "body": [
-            "xPlayer.setWeaponTint(weaponName, weaponTintIndex)"
-        ]
-    },
-    "showHelpNotification xPlayer": {
-        "prefix": "xPlayer.showHelpNotification",
-        "body": [
-            "xPlayer.showHelpNotification(msg, thisFrame, beep, duration)",
-            "-- https://docs.esx-framework.org/legacy/Server/xplayer/showhelpnotification"
-        ]
-    },
-    "showNotification xPlayer": {
-        "prefix": "xPlayer.showNotification",
-        "body": [
-            "xPlayer.showNotification(msg, flash, saveToBrief, hudColorIndex)",
-            "-- https://docs.esx-framework.org/legacy/Server/xplayer/shownotification"
-        ]
-    },
-    "triggerEvent xPlayer": {
-        "prefix": "xPlayer.triggerEvent",
-        "body": [
-            "xPlayer.triggerEvent(eventName, ...)"
-        ]
-    },
-    "updateCoords": {
-        "prefix": "xPlayer.updateCoords",
-        "body": [
-            "xPlayer.updateCoords(coords)"
-        ]
-    },   
-    "PlayerData": {
-        "prefix": "ESX.PlayerData",
-        "body": [
-            "ESX.PlayerData"
-        ]
-    },
-    "PlayerDataJobName": {
-        "prefix": "ESX.PlayerData.job.name",
-        "body": [
-            "ESX.PlayerData.job.name"
-        ]
-    },
-       "PlayerDataJobGrade": {
-        "prefix": "ESX.PlayerData.job.grade_name",
-        "body": [
-            "ESX.PlayerData.job.grade_name"
-        ]
-    },
-    "ContextMenuOpen": {
-        "prefix": "ESX.OpenContext()",
-        "body": [
-            "ESX.OpenContext()"
-        ]
+            "ESX.RefreshContext(${1:data})"
+        ],
+        "description": "[Client] Refresh the active context menu."
     },
     "ESX.RegisterInput": {
         "prefix": "ESX.RegisterInput",
         "body": [
-            "ESX.RegisterInput"
-        ]
+            "ESX.RegisterInput('${1:command_name}', '${2:label}', '${3:keyboard}', '${4:E}', function()",
+            "\t$0",
+            "end${5:, on_release})"
+        ],
+        "description": "[Client] Register a key mapping / input command."
     },
-    "ContextMenuClose": {
-        "prefix": "ESX.CloseContext()",
+    "ESX.UI.Menu.Open": {
+        "prefix": "ESX.UI.Menu.Open",
         "body": [
-            "ESX.CloseContext()"
-        ]
+            "ESX.UI.Menu.Open('${1:default}', GetCurrentResourceName(), '${2:menu_name}', {",
+            "\ttitle = '${3:Title}',",
+            "\talign = '${4:top-left}',",
+            "\telements = {}",
+            "}, function(data, menu)",
+            "\t$0",
+            "end, function(data, menu)",
+            "\tmenu.close()",
+            "end)"
+        ],
+        "description": "[Client] Open an ESX menu (esx_menu_default)."
     },
-    "sharedObject": {
-        "prefix": "ESX.SharedObject",
+    "ESX.UI.Menu.Close": {
+        "prefix": "ESX.UI.Menu.Close",
         "body": [
-            "ESX = exports['es_extended']:getSharedObject()"
-        ]
+            "ESX.UI.Menu.Close(${1:menuType}, ${2:namespace}, ${3:name}${4:, cancel})"
+        ],
+        "description": "[Client] Close a specific opened menu."
+    },
+    "ESX.UI.Menu.CloseAll": {
+        "prefix": "ESX.UI.Menu.CloseAll",
+        "body": [
+            "ESX.UI.Menu.CloseAll(${1:cancel})"
+        ],
+        "description": "[Client] Close all opened menus."
+    },
+    "ESX.UI.Menu.GetOpened": {
+        "prefix": "ESX.UI.Menu.GetOpened",
+        "body": [
+            "ESX.UI.Menu.GetOpened(${1:menuType}, ${2:namespace}, ${3:name})"
+        ],
+        "description": "[Client] Get a specific opened menu table."
+    },
+    "ESX.UI.Menu.GetOpenedMenus": {
+        "prefix": "ESX.UI.Menu.GetOpenedMenus",
+        "body": [
+            "ESX.UI.Menu.GetOpenedMenus()"
+        ],
+        "description": "[Client] Get all currently opened menus."
+    },
+    "ESX.UI.Menu.RegisterType": {
+        "prefix": "ESX.UI.Menu.RegisterType",
+        "body": [
+            "ESX.UI.Menu.RegisterType('${1:my_menu}', function(menu, data)",
+            "\t-- open",
+            "\t$0",
+            "end, function(menu, data)",
+            "\t-- close",
+            "end)"
+        ],
+        "description": "[Client] Register a custom menu type."
+    },
+    "ESX.RegisterInteraction": {
+        "prefix": "ESX.RegisterInteraction",
+        "body": [
+            "ESX.RegisterInteraction('${1:name}', function()",
+            "\t$0",
+            "end, function()",
+            "\treturn ${2:true} -- condition",
+            "end)"
+        ],
+        "description": "[Client] Register an interaction (key + condition)."
+    },
+    "ESX.RemoveInteraction": {
+        "prefix": "ESX.RemoveInteraction",
+        "body": [
+            "ESX.RemoveInteraction('${1:name}')"
+        ],
+        "description": "[Client] Remove a registered interaction."
+    },
+    "ESX.GetInteractKey": {
+        "prefix": "ESX.GetInteractKey",
+        "body": [
+            "ESX.GetInteractKey()"
+        ],
+        "description": "[Client] Get the configured interaction key."
+    },
+    "ESX.Game.GetPedMugshot": {
+        "prefix": "ESX.Game.GetPedMugshot",
+        "body": [
+            "local mugshot, mugshotStr = ESX.Game.GetPedMugshot(${1:ped}, ${2:transparent})"
+        ],
+        "description": "[Client] Get a mugshot texture for a ped."
+    },
+    "ESX.Game.Teleport": {
+        "prefix": "ESX.Game.Teleport",
+        "body": [
+            "ESX.Game.Teleport(${1:entity}, ${2:coords}${3:, cb})"
+        ],
+        "description": "[Client] Teleport an entity to coords."
+    },
+    "ESX.Game.SpawnObject": {
+        "prefix": "ESX.Game.SpawnObject",
+        "body": [
+            "ESX.Game.SpawnObject(${1:object}, ${2:coords}, function(obj)",
+            "\t$0",
+            "end${3:, networked})"
+        ],
+        "description": "[Client] Spawn a (networked) object."
+    },
+    "ESX.Game.SpawnLocalObject": {
+        "prefix": "ESX.Game.SpawnLocalObject",
+        "body": [
+            "ESX.Game.SpawnLocalObject(${1:object}, ${2:coords}, function(obj)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Client] Spawn a client-only object."
+    },
+    "ESX.Game.DeleteVehicle": {
+        "prefix": "ESX.Game.DeleteVehicle",
+        "body": [
+            "ESX.Game.DeleteVehicle(${1:vehicle})"
+        ],
+        "description": "[Client] Delete a vehicle entity."
+    },
+    "ESX.Game.DeleteObject": {
+        "prefix": "ESX.Game.DeleteObject",
+        "body": [
+            "ESX.Game.DeleteObject(${1:object})"
+        ],
+        "description": "[Client] Delete an object entity."
+    },
+    "ESX.Game.SpawnVehicle": {
+        "prefix": "ESX.Game.SpawnVehicle",
+        "body": [
+            "ESX.Game.SpawnVehicle(${1:vehicleModel}, ${2:coords}, ${3:heading}, function(vehicle)",
+            "\t$0",
+            "end${4:, networked})"
+        ],
+        "description": "[Client] Spawn a (networked) vehicle."
+    },
+    "ESX.Game.SpawnLocalVehicle": {
+        "prefix": "ESX.Game.SpawnLocalVehicle",
+        "body": [
+            "ESX.Game.SpawnLocalVehicle(${1:vehicle}, ${2:coords}, ${3:heading}, function(veh)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Client] Spawn a client-only vehicle."
+    },
+    "ESX.Game.IsVehicleEmpty": {
+        "prefix": "ESX.Game.IsVehicleEmpty",
+        "body": [
+            "ESX.Game.IsVehicleEmpty(${1:vehicle})"
+        ],
+        "description": "[Client] Returns whether a vehicle has no occupants."
+    },
+    "ESX.Game.GetObjects": {
+        "prefix": "ESX.Game.GetObjects",
+        "body": [
+            "ESX.Game.GetObjects()"
+        ],
+        "description": "[Client] Get all object entities."
+    },
+    "ESX.Game.GetPeds": {
+        "prefix": "ESX.Game.GetPeds",
+        "body": [
+            "ESX.Game.GetPeds(${1:onlyOtherPeds})"
+        ],
+        "description": "[Client] Get all peds (optionally excluding the player)."
+    },
+    "ESX.Game.GetVehicles": {
+        "prefix": "ESX.Game.GetVehicles",
+        "body": [
+            "ESX.Game.GetVehicles()"
+        ],
+        "description": "[Client] Get all vehicle entities."
+    },
+    "ESX.Game.GetPlayers": {
+        "prefix": "ESX.Game.GetPlayers",
+        "body": [
+            "ESX.Game.GetPlayers(${1:onlyOtherPlayers}, ${2:returnKeyValue}, ${3:returnPeds})"
+        ],
+        "description": "[Client] Get players and optionally their peds."
+    },
+    "ESX.Game.GetClosestObject": {
+        "prefix": "ESX.Game.GetClosestObject",
+        "body": [
+            "ESX.Game.GetClosestObject(${1:coords}${2:, modelFilter})"
+        ],
+        "description": "[Client] Get the closest object to coords."
+    },
+    "ESX.Game.GetClosestPed": {
+        "prefix": "ESX.Game.GetClosestPed",
+        "body": [
+            "ESX.Game.GetClosestPed(${1:coords}${2:, modelFilter})"
+        ],
+        "description": "[Client] Get the closest ped to coords."
+    },
+    "ESX.Game.GetClosestPlayer": {
+        "prefix": "ESX.Game.GetClosestPlayer",
+        "body": [
+            "local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer(${1:coords})"
+        ],
+        "description": "[Client] Get the closest player to coords."
+    },
+    "ESX.Game.GetClosestVehicle": {
+        "prefix": "ESX.Game.GetClosestVehicle",
+        "body": [
+            "ESX.Game.GetClosestVehicle(${1:coords}${2:, modelFilter})"
+        ],
+        "description": "[Client] Get the closest vehicle to coords."
+    },
+    "ESX.Game.GetClosestEntity": {
+        "prefix": "ESX.Game.GetClosestEntity",
+        "body": [
+            "local entity, distance = ESX.Game.GetClosestEntity(${1:entities}, ${2:isPlayerEntities}, ${3:coords}, ${4:modelFilter})"
+        ],
+        "description": "[Client] Get the closest entity from a list."
+    },
+    "ESX.Game.GetPlayersInArea": {
+        "prefix": "ESX.Game.GetPlayersInArea",
+        "body": [
+            "ESX.Game.GetPlayersInArea(${1:coords}, ${2:maxDistance})"
+        ],
+        "description": "[Client] Get players within range of coords."
+    },
+    "ESX.Game.GetVehiclesInArea": {
+        "prefix": "ESX.Game.GetVehiclesInArea",
+        "body": [
+            "ESX.Game.GetVehiclesInArea(${1:coords}, ${2:maxDistance})"
+        ],
+        "description": "[Client] Get vehicles within range of coords."
+    },
+    "ESX.Game.IsSpawnPointClear": {
+        "prefix": "ESX.Game.IsSpawnPointClear",
+        "body": [
+            "ESX.Game.IsSpawnPointClear(${1:coords}, ${2:maxDistance})"
+        ],
+        "description": "[Client] Returns whether a spawn point is clear of vehicles."
+    },
+    "ESX.Game.GetVehicleInDirection": {
+        "prefix": "ESX.Game.GetVehicleInDirection",
+        "body": [
+            "ESX.Game.GetVehicleInDirection()"
+        ],
+        "description": "[Client] Get the vehicle in front of the player (raycast)."
+    },
+    "ESX.Game.GetVehicleProperties": {
+        "prefix": "ESX.Game.GetVehicleProperties",
+        "body": [
+            "ESX.Game.GetVehicleProperties(${1:vehicle})"
+        ],
+        "description": "[Client] Get a vehicle's properties table."
+    },
+    "ESX.Game.SetVehicleProperties": {
+        "prefix": "ESX.Game.SetVehicleProperties",
+        "body": [
+            "ESX.Game.SetVehicleProperties(${1:vehicle}, ${2:props})"
+        ],
+        "description": "[Client] Apply a properties table to a vehicle."
+    },
+    "ESX.Game.GetShapeTestResultSync": {
+        "prefix": "ESX.Game.GetShapeTestResultSync",
+        "body": [
+            "ESX.Game.GetShapeTestResultSync(${1:shape})"
+        ],
+        "description": "[Client] Synchronously get a shape test result."
+    },
+    "ESX.Game.RaycastScreen": {
+        "prefix": "ESX.Game.RaycastScreen",
+        "body": [
+            "ESX.Game.RaycastScreen(${1:depth})"
+        ],
+        "description": "[Client] Raycast from the screen/camera."
+    },
+    "ESX.Game.Utils.DrawText3D": {
+        "prefix": "ESX.Game.Utils.DrawText3D",
+        "body": [
+            "ESX.Game.Utils.DrawText3D(${1:coords}, '${2:text}'${3:, size, font})"
+        ],
+        "description": "[Client] Draw 3D text at world coords."
+    },
+    "ESX.GetVehicleTypeClient": {
+        "prefix": "ESX.GetVehicleTypeClient",
+        "body": [
+            "ESX.GetVehicleTypeClient(${1:model})"
+        ],
+        "description": "[Client] Get the vehicle type for a model."
+    },
+    "ESX.Scaleform.ShowFreemodeMessage": {
+        "prefix": "ESX.Scaleform.ShowFreemodeMessage",
+        "body": [
+            "ESX.Scaleform.ShowFreemodeMessage('${1:title}', '${2:msg}', ${3:sec})"
+        ],
+        "description": "[Client] Show a big freemode message."
+    },
+    "ESX.Scaleform.ShowBreakingNews": {
+        "prefix": "ESX.Scaleform.ShowBreakingNews",
+        "body": [
+            "ESX.Scaleform.ShowBreakingNews('${1:title}', '${2:msg}', '${3:bottom}', ${4:sec})"
+        ],
+        "description": "[Client] Show a breaking-news scaleform."
+    },
+    "ESX.Scaleform.ShowPopupWarning": {
+        "prefix": "ESX.Scaleform.ShowPopupWarning",
+        "body": [
+            "ESX.Scaleform.ShowPopupWarning('${1:title}', '${2:msg}', '${3:bottom}', ${4:sec})"
+        ],
+        "description": "[Client] Show a popup warning scaleform."
+    },
+    "ESX.Scaleform.ShowTrafficMovie": {
+        "prefix": "ESX.Scaleform.ShowTrafficMovie",
+        "body": [
+            "ESX.Scaleform.ShowTrafficMovie(${1:sec})"
+        ],
+        "description": "[Client] Show the traffic movie scaleform."
+    },
+    "ESX.Scaleform.Utils.RequestScaleformMovie": {
+        "prefix": "ESX.Scaleform.Utils.RequestScaleformMovie",
+        "body": [
+            "ESX.Scaleform.Utils.RequestScaleformMovie('${1:movie}')"
+        ],
+        "description": "[Client] Request and load a scaleform movie."
+    },
+    "ESX.Scaleform.Utils.RunMethod": {
+        "prefix": "ESX.Scaleform.Utils.RunMethod",
+        "body": [
+            "ESX.Scaleform.Utils.RunMethod(${1:scaleform}, '${2:methodName}', ${3:returnValue})"
+        ],
+        "description": "[Client] Run a method on a scaleform movie."
+    },
+    "ESX.Streaming.RequestModel": {
+        "prefix": "ESX.Streaming.RequestModel",
+        "body": [
+            "ESX.Streaming.RequestModel(${1:modelHash}${2:, cb})"
+        ],
+        "description": "[Client] Request and load a model."
+    },
+    "ESX.Streaming.RequestStreamedTextureDict": {
+        "prefix": "ESX.Streaming.RequestStreamedTextureDict",
+        "body": [
+            "ESX.Streaming.RequestStreamedTextureDict('${1:textureDict}'${2:, cb})"
+        ],
+        "description": "[Client] Request and load a streamed texture dictionary."
+    },
+    "ESX.Streaming.RequestNamedPtfxAsset": {
+        "prefix": "ESX.Streaming.RequestNamedPtfxAsset",
+        "body": [
+            "ESX.Streaming.RequestNamedPtfxAsset('${1:assetName}'${2:, cb})"
+        ],
+        "description": "[Client] Request and load a named particle FX asset."
+    },
+    "ESX.Streaming.RequestAnimSet": {
+        "prefix": "ESX.Streaming.RequestAnimSet",
+        "body": [
+            "ESX.Streaming.RequestAnimSet('${1:animSet}'${2:, cb})"
+        ],
+        "description": "[Client] Request and load an animation set."
+    },
+    "ESX.Streaming.RequestAnimDict": {
+        "prefix": "ESX.Streaming.RequestAnimDict",
+        "body": [
+            "ESX.Streaming.RequestAnimDict('${1:animDict}'${2:, cb})"
+        ],
+        "description": "[Client] Request and load an animation dictionary."
+    },
+    "ESX.Streaming.RequestWeaponAsset": {
+        "prefix": "ESX.Streaming.RequestWeaponAsset",
+        "body": [
+            "ESX.Streaming.RequestWeaponAsset(${1:weaponHash}${2:, cb})"
+        ],
+        "description": "[Client] Request and load a weapon asset."
+    },
+    "ESX.TriggerServerCallback": {
+        "prefix": "ESX.TriggerServerCallback",
+        "body": [
+            "ESX.TriggerServerCallback('${1:eventName}', function(${2:result})",
+            "\t$0",
+            "end${3:, ...})"
+        ],
+        "description": "[Client] Trigger a server callback."
+    },
+    "ESX.AwaitServerCallback": {
+        "prefix": "ESX.AwaitServerCallback",
+        "body": [
+            "local ${1:result} = ESX.AwaitServerCallback('${2:eventName}'${3:, ...})"
+        ],
+        "description": "[Client] Await a server callback synchronously."
+    },
+    "ESX.RegisterClientCallback": {
+        "prefix": "ESX.RegisterClientCallback",
+        "body": [
+            "ESX.RegisterClientCallback('${1:eventName}', function(cb${2:, ...})",
+            "\tcb($0)",
+            "end)"
+        ],
+        "description": "[Client] Register a client callback."
+    },
+    "ESX.RegisterServerCallback": {
+        "prefix": "ESX.RegisterServerCallback",
+        "body": [
+            "ESX.RegisterServerCallback('${1:eventName}', function(source, cb${2:, ...})",
+            "\tcb($0)",
+            "end)"
+        ],
+        "description": "[Server] Register a server callback."
+    },
+    "ESX.TriggerClientCallback": {
+        "prefix": "ESX.TriggerClientCallback",
+        "body": [
+            "ESX.TriggerClientCallback(${1:player}, '${2:eventName}', function(${3:result})",
+            "\t$0",
+            "end${4:, ...})"
+        ],
+        "description": "[Server] Trigger a client callback."
+    },
+    "ESX.AwaitClientCallback": {
+        "prefix": "ESX.AwaitClientCallback",
+        "body": [
+            "local ${1:result} = ESX.AwaitClientCallback(${2:player}, '${3:eventName}'${4:, ...})"
+        ],
+        "description": "[Server] Await a client callback synchronously."
+    },
+    "ESX.GetPlayerFromId": {
+        "prefix": "ESX.GetPlayerFromId",
+        "body": [
+            "local xPlayer = ESX.GetPlayerFromId(${1:source})"
+        ],
+        "description": "[Server] Get the xPlayer object from a server id."
+    },
+    "ESX.GetPlayerFromIdentifier": {
+        "prefix": "ESX.GetPlayerFromIdentifier",
+        "body": [
+            "local xPlayer = ESX.GetPlayerFromIdentifier('${1:identifier}')"
+        ],
+        "description": "[Server] Get the xPlayer object from an identifier."
+    },
+    "ESX.GetPlayerIdFromIdentifier": {
+        "prefix": "ESX.GetPlayerIdFromIdentifier",
+        "body": [
+            "ESX.GetPlayerIdFromIdentifier('${1:identifier}')"
+        ],
+        "description": "[Server] Get the server id from an identifier."
+    },
+    "ESX.GetExtendedPlayers": {
+        "prefix": "ESX.GetExtendedPlayers",
+        "body": [
+            "ESX.GetExtendedPlayers(${1:key}, ${2:val}, ${3:minimal})"
+        ],
+        "description": "[Server] Get extended players, optionally filtered."
+    },
+    "ESX.GetNumPlayers": {
+        "prefix": "ESX.GetNumPlayers",
+        "body": [
+            "ESX.GetNumPlayers(${1:key}, ${2:val})"
+        ],
+        "description": "[Server] Get the number of players (optionally filtered)."
+    },
+    "ESX.IsPlayerLoaded server": {
+        "prefix": "ESX.IsPlayerLoaded server",
+        "body": [
+            "ESX.IsPlayerLoaded(${1:source})"
+        ],
+        "description": "[Server] Returns whether a player is loaded."
+    },
+    "ESX.GetIdentifier": {
+        "prefix": "ESX.GetIdentifier",
+        "body": [
+            "ESX.GetIdentifier(${1:playerId})"
+        ],
+        "description": "[Server] Get a player's primary identifier."
+    },
+    "ESX.RegisterUsableItem": {
+        "prefix": "ESX.RegisterUsableItem",
+        "body": [
+            "ESX.RegisterUsableItem('${1:item}', function(source${2:, item, ...})",
+            "\tlocal xPlayer = ESX.GetPlayerFromId(source)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Server] Register a usable item callback."
+    },
+    "ESX.UseItem": {
+        "prefix": "ESX.UseItem",
+        "body": [
+            "ESX.UseItem(${1:source}, '${2:item}'${3:, ...})"
+        ],
+        "description": "[Server] Programmatically use an item for a player."
+    },
+    "ESX.GetItemLabel": {
+        "prefix": "ESX.GetItemLabel",
+        "body": [
+            "ESX.GetItemLabel('${1:item}')"
+        ],
+        "description": "[Server] Get the display label for an item."
+    },
+    "ESX.GetItems": {
+        "prefix": "ESX.GetItems",
+        "body": [
+            "ESX.GetItems()"
+        ],
+        "description": "[Server] Get all registered items."
+    },
+    "ESX.GetUsableItems": {
+        "prefix": "ESX.GetUsableItems",
+        "body": [
+            "ESX.GetUsableItems()"
+        ],
+        "description": "[Server] Get all usable items."
+    },
+    "ESX.CreatePickup": {
+        "prefix": "ESX.CreatePickup",
+        "body": [
+            "ESX.CreatePickup(${1:itemType}, '${2:name}', ${3:count}, '${4:label}', ${5:playerId}${6:, components, tintIndex, coords})"
+        ],
+        "description": "[Server] Create a droppable pickup."
+    },
+    "ESX.GetJobs": {
+        "prefix": "ESX.GetJobs",
+        "body": [
+            "ESX.GetJobs(${1:jobType})"
+        ],
+        "description": "[Server] Get all jobs."
+    },
+    "ESX.DoesJobExist": {
+        "prefix": "ESX.DoesJobExist",
+        "body": [
+            "ESX.DoesJobExist('${1:job}', ${2:grade})"
+        ],
+        "description": "[Server] Returns whether a job/grade exists."
+    },
+    "ESX.CreateJob": {
+        "prefix": "ESX.CreateJob",
+        "body": [
+            "ESX.CreateJob('${1:name}', '${2:label}', ${3:grades}${4:, jobType})"
+        ],
+        "description": "[Server] Create a job at runtime."
+    },
+    "ESX.RefreshJobs": {
+        "prefix": "ESX.RefreshJobs",
+        "body": [
+            "ESX.RefreshJobs()"
+        ],
+        "description": "[Server] Reload jobs from the database."
+    },
+    "ESX.RegisterCommand": {
+        "prefix": "ESX.RegisterCommand",
+        "body": [
+            "ESX.RegisterCommand('${1:name}', '${2:user}', function(xPlayer, args, showError)",
+            "\t$0",
+            "end, ${3:false}, { help = '${4:Command description}'${5:, arguments = {}} })"
+        ],
+        "description": "[Server] Register a server command with permissions."
+    },
+    "ESX.Trace": {
+        "prefix": "ESX.Trace",
+        "body": [
+            "ESX.Trace(${1:msg})"
+        ],
+        "description": "[Server] Print a trace/debug message."
+    },
+    "ESX.GetVehicleType": {
+        "prefix": "ESX.GetVehicleType",
+        "body": [
+            "ESX.GetVehicleType(${1:model}, ${2:player}, function(vehicleType)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Server] Get a vehicle's type via a client."
+    },
+    "ESX.DiscordLog": {
+        "prefix": "ESX.DiscordLog",
+        "body": [
+            "ESX.DiscordLog('${1:name}', '${2:title}', '${3:color}', '${4:message}')"
+        ],
+        "description": "[Server] Send a Discord webhook log."
+    },
+    "ESX.DiscordLogFields": {
+        "prefix": "ESX.DiscordLogFields",
+        "body": [
+            "ESX.DiscordLogFields('${1:name}', '${2:title}', '${3:color}', ${4:fields})"
+        ],
+        "description": "[Server] Send a Discord webhook log with fields."
+    },
+    "ESX.OneSync.SpawnVehicle": {
+        "prefix": "ESX.OneSync.SpawnVehicle",
+        "body": [
+            "ESX.OneSync.SpawnVehicle(${1:vehicleModel}, ${2:coords}, ${3:heading}, ${4:vehicleProperties}, function(netId)",
+            "\t$0",
+            "end${5:, vehicleType})"
+        ],
+        "description": "[Server] Spawn a server-side (OneSync) vehicle."
+    },
+    "ESX.OneSync.SpawnObject": {
+        "prefix": "ESX.OneSync.SpawnObject",
+        "body": [
+            "ESX.OneSync.SpawnObject(${1:model}, ${2:coords}, ${3:heading}, function(netId)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Server] Spawn a server-side (OneSync) object."
+    },
+    "ESX.OneSync.SpawnPed": {
+        "prefix": "ESX.OneSync.SpawnPed",
+        "body": [
+            "ESX.OneSync.SpawnPed(${1:model}, ${2:coords}, ${3:heading}, function(netId)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Server] Spawn a server-side (OneSync) ped."
+    },
+    "ESX.OneSync.SpawnPedInVehicle": {
+        "prefix": "ESX.OneSync.SpawnPedInVehicle",
+        "body": [
+            "ESX.OneSync.SpawnPedInVehicle(${1:model}, ${2:vehicle}, ${3:seat}, function(netId)",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Server] Spawn a server-side ped inside a vehicle."
+    },
+    "ESX.OneSync.GetPlayersInArea": {
+        "prefix": "ESX.OneSync.GetPlayersInArea",
+        "body": [
+            "ESX.OneSync.GetPlayersInArea(${1:source}, ${2:maxDistance}${3:, ignore, routingBucket})"
+        ],
+        "description": "[Server] Get players within an area (OneSync)."
+    },
+    "ESX.OneSync.GetClosestPlayer": {
+        "prefix": "ESX.OneSync.GetClosestPlayer",
+        "body": [
+            "ESX.OneSync.GetClosestPlayer(${1:source}, ${2:maxDistance}${3:, ignore, routingBucket})"
+        ],
+        "description": "[Server] Get the closest player (OneSync)."
+    },
+    "ESX.OneSync.GetPedsInArea": {
+        "prefix": "ESX.OneSync.GetPedsInArea",
+        "body": [
+            "ESX.OneSync.GetPedsInArea(${1:coords}, ${2:maxDistance}${3:, modelFilter})"
+        ],
+        "description": "[Server] Get peds within an area (OneSync)."
+    },
+    "ESX.OneSync.GetObjectsInArea": {
+        "prefix": "ESX.OneSync.GetObjectsInArea",
+        "body": [
+            "ESX.OneSync.GetObjectsInArea(${1:coords}, ${2:maxDistance}${3:, modelFilter})"
+        ],
+        "description": "[Server] Get objects within an area (OneSync)."
+    },
+    "ESX.OneSync.GetVehiclesInArea": {
+        "prefix": "ESX.OneSync.GetVehiclesInArea",
+        "body": [
+            "ESX.OneSync.GetVehiclesInArea(${1:coords}, ${2:maxDistance}${3:, modelFilter})"
+        ],
+        "description": "[Server] Get vehicles within an area (OneSync)."
+    },
+    "ESX.OneSync.GetClosestPed": {
+        "prefix": "ESX.OneSync.GetClosestPed",
+        "body": [
+            "ESX.OneSync.GetClosestPed(${1:coords}${2:, modelFilter})"
+        ],
+        "description": "[Server] Get the closest ped (OneSync)."
+    },
+    "ESX.OneSync.GetClosestObject": {
+        "prefix": "ESX.OneSync.GetClosestObject",
+        "body": [
+            "ESX.OneSync.GetClosestObject(${1:coords}${2:, modelFilter})"
+        ],
+        "description": "[Server] Get the closest object (OneSync)."
+    },
+    "ESX.OneSync.GetClosestVehicle": {
+        "prefix": "ESX.OneSync.GetClosestVehicle",
+        "body": [
+            "ESX.OneSync.GetClosestVehicle(${1:coords}${2:, modelFilter})"
+        ],
+        "description": "[Server] Get the closest vehicle (OneSync)."
+    },
+    "ESX.GetWeapon": {
+        "prefix": "ESX.GetWeapon",
+        "body": [
+            "ESX.GetWeapon('${1:weaponName}')"
+        ],
+        "description": "[Shared] Get a weapon's index and data by name."
+    },
+    "ESX.GetWeaponFromHash": {
+        "prefix": "ESX.GetWeaponFromHash",
+        "body": [
+            "ESX.GetWeaponFromHash(${1:weaponHash})"
+        ],
+        "description": "[Shared] Get a weapon's data from its hash."
+    },
+    "ESX.GetWeaponList": {
+        "prefix": "ESX.GetWeaponList",
+        "body": [
+            "ESX.GetWeaponList(${1:byHash})"
+        ],
+        "description": "[Shared] Get the full weapon list."
+    },
+    "ESX.GetWeaponLabel": {
+        "prefix": "ESX.GetWeaponLabel",
+        "body": [
+            "ESX.GetWeaponLabel('${1:weaponName}')"
+        ],
+        "description": "[Shared] Get the display label for a weapon."
+    },
+    "ESX.GetWeaponComponent": {
+        "prefix": "ESX.GetWeaponComponent",
+        "body": [
+            "ESX.GetWeaponComponent('${1:weaponName}', '${2:weaponComponent}')"
+        ],
+        "description": "[Shared] Get a weapon component's data."
+    },
+    "ESX.GetRandomString": {
+        "prefix": "ESX.GetRandomString",
+        "body": [
+            "ESX.GetRandomString(${1:length})"
+        ],
+        "description": "[Shared] Generate a random string of a given length."
+    },
+    "ESX.GetConfig": {
+        "prefix": "ESX.GetConfig",
+        "body": [
+            "ESX.GetConfig(${1:key})"
+        ],
+        "description": "[Shared] Get the ESX config (optionally a single key)."
+    },
+    "ESX.DumpTable": {
+        "prefix": "ESX.DumpTable",
+        "body": [
+            "ESX.DumpTable(${1:table})"
+        ],
+        "description": "[Shared] Dump a table to a readable string."
+    },
+    "ESX.Round": {
+        "prefix": "ESX.Round",
+        "body": [
+            "ESX.Round(${1:value}${2:, numDecimalPlaces})"
+        ],
+        "description": "[Shared] Round a number to N decimal places."
+    },
+    "ESX.Await": {
+        "prefix": "ESX.Await",
+        "body": [
+            "ESX.Await(function()",
+            "\treturn $0",
+            "end${1:, errorMessage, timeoutMs})"
+        ],
+        "description": "[Shared] Await until a condition function returns truthy."
+    },
+    "ESX.SetTimeout": {
+        "prefix": "ESX.SetTimeout",
+        "body": [
+            "local timeout = ESX.SetTimeout(${1:5000}, function()",
+            "\t$0",
+            "end)"
+        ],
+        "description": "[Shared] Run a callback after a delay (cancellable)."
+    },
+    "ESX.ClearTimeout": {
+        "prefix": "ESX.ClearTimeout",
+        "body": [
+            "ESX.ClearTimeout(${1:id})"
+        ],
+        "description": "[Shared] Cancel a pending ESX.SetTimeout."
+    },
+    "ESX.Math.Round": {
+        "prefix": "ESX.Math.Round",
+        "body": [
+            "ESX.Math.Round(${1:value}${2:, numDecimalPlaces})"
+        ],
+        "description": "[Shared] Round a number to N decimal places."
+    },
+    "ESX.Math.GroupDigits": {
+        "prefix": "ESX.Math.GroupDigits",
+        "body": [
+            "ESX.Math.GroupDigits(${1:value})"
+        ],
+        "description": "[Shared] Format a number with digit grouping (1,000)."
+    },
+    "ESX.Math.Trim": {
+        "prefix": "ESX.Math.Trim",
+        "body": [
+            "ESX.Math.Trim(${1:value})"
+        ],
+        "description": "[Shared] Trim whitespace from a string."
+    },
+    "ESX.Math.Random": {
+        "prefix": "ESX.Math.Random",
+        "body": [
+            "ESX.Math.Random(${1:minRange}, ${2:maxRange})"
+        ],
+        "description": "[Shared] Get a random number in a range."
+    },
+    "ESX.Math.GetHeadingFromCoords": {
+        "prefix": "ESX.Math.GetHeadingFromCoords",
+        "body": [
+            "ESX.Math.GetHeadingFromCoords(${1:origin}, ${2:target})"
+        ],
+        "description": "[Shared] Get a heading between two coords."
+    },
+    "ESX.Table.SizeOf": {
+        "prefix": "ESX.Table.SizeOf",
+        "body": [
+            "ESX.Table.SizeOf(${1:t})"
+        ],
+        "description": "[Shared] Count the entries in a table."
+    },
+    "ESX.Table.IndexOf": {
+        "prefix": "ESX.Table.IndexOf",
+        "body": [
+            "ESX.Table.IndexOf(${1:t}, ${2:value})"
+        ],
+        "description": "[Shared] Get the first index of a value."
+    },
+    "ESX.Table.Find": {
+        "prefix": "ESX.Table.Find",
+        "body": [
+            "ESX.Table.Find(${1:t}, function(v)",
+            "\treturn $0",
+            "end)"
+        ],
+        "description": "[Shared] Find the first value matching a predicate."
+    },
+    "ESX.Table.Filter": {
+        "prefix": "ESX.Table.Filter",
+        "body": [
+            "ESX.Table.Filter(${1:t}, function(v)",
+            "\treturn $0",
+            "end)"
+        ],
+        "description": "[Shared] Filter a table by a predicate."
+    },
+    "ESX.Table.Map": {
+        "prefix": "ESX.Table.Map",
+        "body": [
+            "ESX.Table.Map(${1:t}, function(v)",
+            "\treturn $0",
+            "end)"
+        ],
+        "description": "[Shared] Map a table to a new table."
+    },
+    "ESX.Table.Clone": {
+        "prefix": "ESX.Table.Clone",
+        "body": [
+            "ESX.Table.Clone(${1:t})"
+        ],
+        "description": "[Shared] Deep-clone a table."
+    },
+    "ESX.Table.Concat": {
+        "prefix": "ESX.Table.Concat",
+        "body": [
+            "ESX.Table.Concat(${1:t1}, ${2:t2})"
+        ],
+        "description": "[Shared] Concatenate two array tables."
+    },
+    "ESX.Table.Sort": {
+        "prefix": "ESX.Table.Sort",
+        "body": [
+            "ESX.Table.Sort(${1:t}, ${2:order})"
+        ],
+        "description": "[Shared] Sort a table by a comparator/order."
+    },
+    "xPlayer.triggerEvent": {
+        "prefix": "xPlayer.triggerEvent",
+        "body": [
+            "xPlayer.triggerEvent('${1:eventName}'${2:, ...})"
+        ],
+        "description": "Trigger a client event on this player."
+    },
+    "xPlayer.setCoords": {
+        "prefix": "xPlayer.setCoords",
+        "body": [
+            "xPlayer.setCoords(${1:coordinates})"
+        ],
+        "description": "Teleport the player to coords."
+    },
+    "xPlayer.getCoords": {
+        "prefix": "xPlayer.getCoords",
+        "body": [
+            "xPlayer.getCoords(${1:vector}, ${2:heading})"
+        ],
+        "description": "Get the player's coords (optionally as a vector / with heading)."
+    },
+    "xPlayer.kick": {
+        "prefix": "xPlayer.kick",
+        "body": [
+            "xPlayer.kick('${1:reason}')"
+        ],
+        "description": "Kick the player with a reason."
+    },
+    "xPlayer.getPlayTime": {
+        "prefix": "xPlayer.getPlayTime",
+        "body": [
+            "xPlayer.getPlayTime()"
+        ],
+        "description": "Get the player's session play time."
+    },
+    "xPlayer.isAdmin": {
+        "prefix": "xPlayer.isAdmin",
+        "body": [
+            "xPlayer.isAdmin()"
+        ],
+        "description": "Returns whether the player is an admin."
+    },
+    "xPlayer.setMoney": {
+        "prefix": "xPlayer.setMoney",
+        "body": [
+            "xPlayer.setMoney(${1:money})"
+        ],
+        "description": "Set the player's cash money."
+    },
+    "xPlayer.getMoney": {
+        "prefix": "xPlayer.getMoney",
+        "body": [
+            "xPlayer.getMoney()"
+        ],
+        "description": "Get the player's cash money."
+    },
+    "xPlayer.addMoney": {
+        "prefix": "xPlayer.addMoney",
+        "body": [
+            "xPlayer.addMoney(${1:money}${2:, reason})"
+        ],
+        "description": "Add cash money to the player."
+    },
+    "xPlayer.removeMoney": {
+        "prefix": "xPlayer.removeMoney",
+        "body": [
+            "xPlayer.removeMoney(${1:money}${2:, reason})"
+        ],
+        "description": "Remove cash money from the player."
+    },
+    "xPlayer.getIdentifier": {
+        "prefix": "xPlayer.getIdentifier",
+        "body": [
+            "xPlayer.getIdentifier()"
+        ],
+        "description": "Get the player's primary identifier."
+    },
+    "xPlayer.getSSN": {
+        "prefix": "xPlayer.getSSN",
+        "body": [
+            "xPlayer.getSSN()"
+        ],
+        "description": "Get the player's SSN."
+    },
+    "xPlayer.setGroup": {
+        "prefix": "xPlayer.setGroup",
+        "body": [
+            "xPlayer.setGroup('${1:newGroup}')"
+        ],
+        "description": "Set the player's permission group."
+    },
+    "xPlayer.getGroup": {
+        "prefix": "xPlayer.getGroup",
+        "body": [
+            "xPlayer.getGroup()"
+        ],
+        "description": "Get the player's permission group."
+    },
+    "xPlayer.set": {
+        "prefix": "xPlayer.set",
+        "body": [
+            "xPlayer.set('${1:key}', ${2:value})"
+        ],
+        "description": "Set a custom variable on the player."
+    },
+    "xPlayer.get": {
+        "prefix": "xPlayer.get",
+        "body": [
+            "xPlayer.get('${1:key}')"
+        ],
+        "description": "Get a custom variable from the player."
+    },
+    "xPlayer.getAccounts": {
+        "prefix": "xPlayer.getAccounts",
+        "body": [
+            "xPlayer.getAccounts(${1:minimal})"
+        ],
+        "description": "Get all of the player's accounts."
+    },
+    "xPlayer.getAccount": {
+        "prefix": "xPlayer.getAccount",
+        "body": [
+            "xPlayer.getAccount('${1:account}')"
+        ],
+        "description": "Get a single account (e.g. 'bank', 'money', 'black_money')."
+    },
+    "xPlayer.getInventory": {
+        "prefix": "xPlayer.getInventory",
+        "body": [
+            "xPlayer.getInventory(${1:minimal})"
+        ],
+        "description": "Get the player's inventory."
+    },
+    "xPlayer.getJob": {
+        "prefix": "xPlayer.getJob",
+        "body": [
+            "xPlayer.getJob()"
+        ],
+        "description": "Get the player's job table."
+    },
+    "xPlayer.getLoadout": {
+        "prefix": "xPlayer.getLoadout",
+        "body": [
+            "xPlayer.getLoadout(${1:minimal})"
+        ],
+        "description": "Get the player's weapon loadout."
+    },
+    "xPlayer.getName": {
+        "prefix": "xPlayer.getName",
+        "body": [
+            "xPlayer.getName()"
+        ],
+        "description": "Get the player's name."
+    },
+    "xPlayer.setName": {
+        "prefix": "xPlayer.setName",
+        "body": [
+            "xPlayer.setName('${1:newName}')"
+        ],
+        "description": "Set the player's name."
+    },
+    "xPlayer.setAccountMoney": {
+        "prefix": "xPlayer.setAccountMoney",
+        "body": [
+            "xPlayer.setAccountMoney('${1:accountName}', ${2:money}${3:, reason})"
+        ],
+        "description": "Set the balance of an account."
+    },
+    "xPlayer.addAccountMoney": {
+        "prefix": "xPlayer.addAccountMoney",
+        "body": [
+            "xPlayer.addAccountMoney('${1:accountName}', ${2:money}${3:, reason})"
+        ],
+        "description": "Add money to an account."
+    },
+    "xPlayer.removeAccountMoney": {
+        "prefix": "xPlayer.removeAccountMoney",
+        "body": [
+            "xPlayer.removeAccountMoney('${1:accountName}', ${2:money}${3:, reason})"
+        ],
+        "description": "Remove money from an account."
+    },
+    "xPlayer.getInventoryItem": {
+        "prefix": "xPlayer.getInventoryItem",
+        "body": [
+            "xPlayer.getInventoryItem('${1:itemName}')"
+        ],
+        "description": "Get an inventory item entry."
+    },
+    "xPlayer.addInventoryItem": {
+        "prefix": "xPlayer.addInventoryItem",
+        "body": [
+            "xPlayer.addInventoryItem('${1:itemName}', ${2:count})"
+        ],
+        "description": "Add an item to the player's inventory."
+    },
+    "xPlayer.removeInventoryItem": {
+        "prefix": "xPlayer.removeInventoryItem",
+        "body": [
+            "xPlayer.removeInventoryItem('${1:itemName}', ${2:count})"
+        ],
+        "description": "Remove an item from the player's inventory."
+    },
+    "xPlayer.setInventoryItem": {
+        "prefix": "xPlayer.setInventoryItem",
+        "body": [
+            "xPlayer.setInventoryItem('${1:itemName}', ${2:count})"
+        ],
+        "description": "Set the count of an inventory item."
+    },
+    "xPlayer.getWeight": {
+        "prefix": "xPlayer.getWeight",
+        "body": [
+            "xPlayer.getWeight()"
+        ],
+        "description": "Get the player's current inventory weight."
+    },
+    "xPlayer.getSource": {
+        "prefix": "xPlayer.getSource",
+        "body": [
+            "xPlayer.getSource()"
+        ],
+        "description": "Get the player's server source id."
+    },
+    "xPlayer.getMaxWeight": {
+        "prefix": "xPlayer.getMaxWeight",
+        "body": [
+            "xPlayer.getMaxWeight()"
+        ],
+        "description": "Get the player's maximum inventory weight."
+    },
+    "xPlayer.canCarryItem": {
+        "prefix": "xPlayer.canCarryItem",
+        "body": [
+            "xPlayer.canCarryItem('${1:itemName}', ${2:count})"
+        ],
+        "description": "Returns whether the player can carry an item count."
+    },
+    "xPlayer.canSwapItem": {
+        "prefix": "xPlayer.canSwapItem",
+        "body": [
+            "xPlayer.canSwapItem('${1:firstItem}', ${2:firstItemCount}, '${3:testItem}', ${4:testItemCount})"
+        ],
+        "description": "Returns whether the player can swap items by weight."
+    },
+    "xPlayer.setMaxWeight": {
+        "prefix": "xPlayer.setMaxWeight",
+        "body": [
+            "xPlayer.setMaxWeight(${1:newWeight})"
+        ],
+        "description": "Set the player's maximum inventory weight."
+    },
+    "xPlayer.setJob": {
+        "prefix": "xPlayer.setJob",
+        "body": [
+            "xPlayer.setJob('${1:newJob}', ${2:grade}${3:, onDuty})"
+        ],
+        "description": "Set the player's job and grade."
+    },
+    "xPlayer.addWeapon": {
+        "prefix": "xPlayer.addWeapon",
+        "body": [
+            "xPlayer.addWeapon('${1:weaponName}', ${2:ammo})"
+        ],
+        "description": "Give the player a weapon."
+    },
+    "xPlayer.addWeaponComponent": {
+        "prefix": "xPlayer.addWeaponComponent",
+        "body": [
+            "xPlayer.addWeaponComponent('${1:weaponName}', '${2:weaponComponent}')"
+        ],
+        "description": "Add a component to a player's weapon."
+    },
+    "xPlayer.addWeaponAmmo": {
+        "prefix": "xPlayer.addWeaponAmmo",
+        "body": [
+            "xPlayer.addWeaponAmmo('${1:weaponName}', ${2:ammoCount})"
+        ],
+        "description": "Add ammo to a player's weapon."
+    },
+    "xPlayer.updateWeaponAmmo": {
+        "prefix": "xPlayer.updateWeaponAmmo",
+        "body": [
+            "xPlayer.updateWeaponAmmo('${1:weaponName}', ${2:ammoCount})"
+        ],
+        "description": "Update the stored ammo of a weapon."
+    },
+    "xPlayer.setWeaponTint": {
+        "prefix": "xPlayer.setWeaponTint",
+        "body": [
+            "xPlayer.setWeaponTint('${1:weaponName}', ${2:weaponTintIndex})"
+        ],
+        "description": "Set a weapon's tint."
+    },
+    "xPlayer.getWeaponTint": {
+        "prefix": "xPlayer.getWeaponTint",
+        "body": [
+            "xPlayer.getWeaponTint('${1:weaponName}')"
+        ],
+        "description": "Get a weapon's tint index."
+    },
+    "xPlayer.removeWeapon": {
+        "prefix": "xPlayer.removeWeapon",
+        "body": [
+            "xPlayer.removeWeapon('${1:weaponName}')"
+        ],
+        "description": "Remove a weapon from the player."
+    },
+    "xPlayer.removeWeaponComponent": {
+        "prefix": "xPlayer.removeWeaponComponent",
+        "body": [
+            "xPlayer.removeWeaponComponent('${1:weaponName}', '${2:weaponComponent}')"
+        ],
+        "description": "Remove a component from a player's weapon."
+    },
+    "xPlayer.removeWeaponAmmo": {
+        "prefix": "xPlayer.removeWeaponAmmo",
+        "body": [
+            "xPlayer.removeWeaponAmmo('${1:weaponName}', ${2:ammoCount})"
+        ],
+        "description": "Remove ammo from a player's weapon."
+    },
+    "xPlayer.hasWeaponComponent": {
+        "prefix": "xPlayer.hasWeaponComponent",
+        "body": [
+            "xPlayer.hasWeaponComponent('${1:weaponName}', '${2:weaponComponent}')"
+        ],
+        "description": "Returns whether a weapon has a component."
+    },
+    "xPlayer.hasWeapon": {
+        "prefix": "xPlayer.hasWeapon",
+        "body": [
+            "xPlayer.hasWeapon('${1:weaponName}')"
+        ],
+        "description": "Returns whether the player has a weapon."
+    },
+    "xPlayer.hasItem": {
+        "prefix": "xPlayer.hasItem",
+        "body": [
+            "xPlayer.hasItem('${1:item}')"
+        ],
+        "description": "Returns the item entry if the player has it."
+    },
+    "xPlayer.getWeapon": {
+        "prefix": "xPlayer.getWeapon",
+        "body": [
+            "xPlayer.getWeapon('${1:weaponName}')"
+        ],
+        "description": "Get the loadout index of a weapon."
+    },
+    "xPlayer.showNotification": {
+        "prefix": "xPlayer.showNotification",
+        "body": [
+            "xPlayer.showNotification('${1:msg}'${2:, notifyType, length, title, position})"
+        ],
+        "description": "Show a notification to the player."
+    },
+    "xPlayer.showAdvancedNotification": {
+        "prefix": "xPlayer.showAdvancedNotification",
+        "body": [
+            "xPlayer.showAdvancedNotification('${1:sender}', '${2:subject}', '${3:msg}', '${4:textureDict}', ${5:iconType}${6:, flash, saveToBrief, hudColorIndex})"
+        ],
+        "description": "Show an advanced notification to the player."
+    },
+    "xPlayer.showHelpNotification": {
+        "prefix": "xPlayer.showHelpNotification",
+        "body": [
+            "xPlayer.showHelpNotification('${1:msg}'${2:, thisFrame, beep, duration})"
+        ],
+        "description": "Show a help notification to the player."
+    },
+    "xPlayer.getMeta": {
+        "prefix": "xPlayer.getMeta",
+        "body": [
+            "xPlayer.getMeta(${1:index}${2:, subIndex})"
+        ],
+        "description": "Get player metadata."
+    },
+    "xPlayer.setMeta": {
+        "prefix": "xPlayer.setMeta",
+        "body": [
+            "xPlayer.setMeta(${1:index}, ${2:value}${3:, subValue})"
+        ],
+        "description": "Set player metadata."
+    },
+    "xPlayer.clearMeta": {
+        "prefix": "xPlayer.clearMeta",
+        "body": [
+            "xPlayer.clearMeta(${1:index}${2:, subValues})"
+        ],
+        "description": "Clear player metadata."
+    },
+    "xPlayer.executeCommand": {
+        "prefix": "xPlayer.executeCommand",
+        "body": [
+            "xPlayer.executeCommand('${1:command}')"
+        ],
+        "description": "Execute a command as the player."
+    },
+    "xPlayer.togglePaycheck": {
+        "prefix": "xPlayer.togglePaycheck",
+        "body": [
+            "xPlayer.togglePaycheck(${1:toggle})"
+        ],
+        "description": "Enable/disable the player's paycheck."
+    },
+    "xPlayer.isPaycheckEnabled": {
+        "prefix": "xPlayer.isPaycheckEnabled",
+        "body": [
+            "xPlayer.isPaycheckEnabled()"
+        ],
+        "description": "Returns whether the player's paycheck is enabled."
     }
 }
